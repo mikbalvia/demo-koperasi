@@ -43,6 +43,7 @@
 
 <style>
 	.legality {
+		width: 100%;
 		background: var(--color-surface);
 		border-radius: var(--radius-lg);
 		padding: var(--space-5);
@@ -97,6 +98,18 @@
 		.legality {
 			flex-direction: column;
 			align-items: flex-start;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.legality {
+			padding: var(--space-4);
+		}
+
+		.legality__icon-wrap {
+			width: 36px;
+			height: 36px;
+			min-width: 36px;
 		}
 	}
 </style>

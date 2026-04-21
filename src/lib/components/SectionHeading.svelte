@@ -65,4 +65,28 @@
 	.light .ornament__diamond {
 		background: var(--gold-400);
 	}
+
+	@media (max-width: 768px) {
+		.section-heading {
+			margin-bottom: var(--space-8);
+		}
+
+		.section-heading__title {
+			font-size: var(--text-3xl);
+		}
+
+		.section-heading__subtitle {
+			font-size: var(--text-base);
+		}
+	}
+
+	@media (max-width: 480px) {
+		.section-heading__title {
+			font-size: var(--text-2xl);
+		}
+
+		.section-heading__subtitle {
+			font-size: var(--text-sm);
+		}
+	}
 </style>

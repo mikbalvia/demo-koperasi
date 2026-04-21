@@ -588,6 +588,30 @@
 	}
 
 	/* Responsive */
+	@media (max-width: 1100px) {
+		.register-card {
+			max-width: 860px;
+		}
+
+		.register-form {
+			padding: var(--space-7);
+		}
+	}
+
+	@media (max-width: 900px) {
+		.register-hero {
+			padding: 110px 0 var(--space-8);
+		}
+
+		.register-card__header {
+			padding: var(--space-8) var(--space-6) var(--space-5);
+		}
+
+		.form-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+
 	@media (max-width: 640px) {
 		.register-form {
 			padding: var(--space-5);
@@ -603,6 +627,29 @@
 
 		.register-hero {
 			padding: 100px 0 var(--space-6);
+		}
+
+		.file-upload {
+			padding: var(--space-6) var(--space-4);
+		}
+
+		.register-form__submit {
+			width: 100%;
+			min-width: 0;
+		}
+	}
+
+	@media (max-width: 900px) and (orientation: landscape) and (max-height: 560px) {
+		.register-hero {
+			padding: 90px 0 var(--space-5);
+		}
+
+		.register-hero__tagline {
+			font-size: var(--text-xs);
+		}
+
+		.register-section {
+			margin-top: -var(--space-5);
 		}
 	}
 </style>

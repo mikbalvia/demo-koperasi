@@ -143,7 +143,7 @@
 		<div class="layanan-grid">
 			{#each layanan as item, i}
 				<div class="animate-on-scroll delay-{i + 1}">
-					<ServiceCard {item} index={i} layanan={item} />
+					<ServiceCard index={i} layanan={item} />
 				</div>
 			{/each}
 		</div>
@@ -268,6 +268,7 @@
 	.hero {
 		position: relative;
 		min-height: calc(100vh - 60px);
+		min-height: calc(100svh - 60px);
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -738,6 +739,34 @@
 	}
 
 	/* ===== RESPONSIVE ===== */
+	@media (max-width: 1100px) {
+		.hero {
+			padding-top: 130px;
+		}
+
+		.hero__stats-grid {
+			gap: var(--space-3);
+		}
+
+		.profil-sejarah {
+			grid-column: span 12;
+			min-height: 420px;
+		}
+
+		.profil-visi,
+		.profil-misi {
+			grid-column: span 6;
+		}
+
+		.layanan-grid {
+			gap: var(--space-4);
+		}
+
+		.org-grid--5 {
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+
 	@media (max-width: 960px) {
 		.hero {
 			min-height: auto;
@@ -755,54 +784,153 @@
 			grid-template-columns: repeat(2, 1fr);
 		}
 
-		.profil-sejarah, .profil-visi, .profil-misi {
+		.profil-sejarah {
 			grid-column: span 12;
 			grid-row: auto;
 		}
 
+		.profil-visi,
+		.profil-misi {
+			grid-column: span 6;
+			grid-row: auto;
+		}
+
 		.layanan-grid {
-			grid-template-columns: 1fr;
-			max-width: 500px;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			max-width: 780px;
 			margin: 0 auto;
 		}
 
 		.org-grid--5 {
 			grid-template-columns: repeat(3, 1fr);
 		}
+	}
 
+	@media (max-width: 860px) {
 		.trust-grid {
 			grid-template-columns: 1fr;
 		}
 
 		.berita-grid {
-			grid-template-columns: 1fr;
-			max-width: 500px;
-			margin: 0 auto;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
 		}
 	}
 
-	@media (max-width: 600px) {
+	@media (max-width: 768px) {
 		.hero {
 			padding-top: 120px;
 			padding-bottom: var(--space-12);
 		}
 
-		.hero__title {
-			font-size: var(--text-4xl);
+		.hero__subtitle {
+			font-size: var(--text-base);
+			max-width: 520px;
 		}
 
-		.hero__stats-grid {
-			grid-template-columns: repeat(2, 1fr);
-			gap: var(--space-3);
+		.hero__actions,
+		.cta-section__actions {
+			flex-direction: column;
+			align-items: stretch;
+			max-width: 360px;
+			margin: 0 auto;
+		}
+
+		.hero__actions :global(.btn),
+		.cta-section__actions :global(.btn) {
+			width: 100%;
+		}
+
+		.profil-visi,
+		.profil-misi {
+			grid-column: span 12;
+		}
+
+		.layanan-grid {
+			grid-template-columns: 1fr;
+			max-width: 560px;
 		}
 
 		.org-grid--3 {
-			grid-template-columns: 1fr;
-			max-width: 250px;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			max-width: 460px;
 		}
 
 		.org-grid--5 {
 			grid-template-columns: repeat(2, 1fr);
+		}
+
+		.trust-card {
+			padding: var(--space-6);
+		}
+
+		.cta-section {
+			padding: var(--space-16) 0;
+		}
+	}
+
+	@media (max-width: 600px) {
+		.hero__stats-grid {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: var(--space-3);
+		}
+
+		.bento-content {
+			padding: var(--space-6);
+		}
+
+		.profil-sejarah {
+			min-height: 380px;
+		}
+
+		.org-grid--3,
+		.org-grid--5 {
+			grid-template-columns: 1fr;
+			max-width: 320px;
+			margin: 0 auto;
+		}
+
+		.identitas-value--mono {
+			font-size: var(--text-base);
+			letter-spacing: 0.04em;
+		}
+	}
+
+	@media (max-width: 420px) {
+		.hero__stats-grid {
+			grid-template-columns: 1fr;
+			max-width: 280px;
+			margin: 0 auto;
+		}
+
+		.hero {
+			padding-top: 110px;
+		}
+	}
+
+	@media (max-width: 900px) and (orientation: landscape) and (max-height: 560px) {
+		.hero {
+			padding-top: 96px;
+			padding-bottom: var(--space-10);
+			min-height: auto;
+		}
+
+		.hero__subtitle {
+			max-width: 760px;
+		}
+
+		.hero__actions,
+		.cta-section__actions {
+			flex-direction: row;
+			max-width: none;
+		}
+
+		.hero__actions :global(.btn),
+		.cta-section__actions :global(.btn) {
+			width: auto;
+		}
+
+		.hero__stats-wrapper {
+			margin-top: var(--space-8);
 		}
 	}
 </style>

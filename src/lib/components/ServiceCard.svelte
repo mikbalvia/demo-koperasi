@@ -31,6 +31,7 @@
 
 <style>
 	.service-card {
+		width: 100%;
 		padding: var(--space-8) var(--space-6);
 		position: relative;
 		overflow: hidden;
@@ -90,5 +91,27 @@
 		font-size: var(--text-sm);
 		color: var(--color-text-secondary);
 		line-height: 1.7;
+	}
+
+	@media (max-width: 768px) {
+		.service-card {
+			padding: var(--space-7) var(--space-5);
+		}
+	}
+
+	@media (max-width: 480px) {
+		.service-card {
+			padding: var(--space-6) var(--space-4);
+		}
+
+		.service-card__icon-wrap {
+			width: 52px;
+			height: 52px;
+			margin-bottom: var(--space-4);
+		}
+
+		.service-card__title {
+			font-size: var(--text-lg);
+		}
 	}
 </style>

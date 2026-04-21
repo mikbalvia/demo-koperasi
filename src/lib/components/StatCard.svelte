@@ -77,6 +77,7 @@
 
 <style>
 	.stat-card {
+		width: 100%;
 		background: rgba(41, 41, 36, 0.5); /* var(--warm-800) with opacity */
 		backdrop-filter: blur(20px);
 		-webkit-backdrop-filter: blur(20px);
@@ -126,5 +127,31 @@
 		font-size: var(--text-sm);
 		color: rgba(255, 255, 255, 0.7);
 		font-weight: 500;
+	}
+
+	@media (max-width: 600px) {
+		.stat-card {
+			padding: var(--space-5) var(--space-4);
+		}
+
+		.stat-card__icon {
+			width: 48px;
+			height: 48px;
+			margin-bottom: var(--space-2);
+		}
+
+		.stat-card__value {
+			font-size: var(--text-3xl);
+		}
+
+		.stat-card__label {
+			font-size: var(--text-xs);
+		}
+	}
+
+	@media (max-width: 420px) {
+		.stat-card__value {
+			font-size: var(--text-2xl);
+		}
 	}
 </style>

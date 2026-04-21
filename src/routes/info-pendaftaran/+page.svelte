@@ -308,8 +308,44 @@
 	}
 
 	@media (max-width: 768px) {
+		.page-header {
+			padding: 116px 0 var(--space-12);
+		}
+
+		.page-header__subtitle {
+			font-size: var(--text-base);
+		}
+
 		.syarat-grid {
 			grid-template-columns: 1fr;
+		}
+
+		.prosedur-step {
+			gap: var(--space-4);
+		}
+
+		.prosedur-step__num {
+			width: 38px;
+			height: 38px;
+			font-size: var(--text-base);
+		}
+
+		.faq-item__question {
+			padding: var(--space-4);
+		}
+
+		.faq-item__answer p {
+			padding: 0 var(--space-4) var(--space-4);
+		}
+	}
+
+	@media (max-width: 900px) and (orientation: landscape) and (max-height: 560px) {
+		.page-header {
+			padding: 90px 0 var(--space-10);
+		}
+
+		.syarat-grid {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
 		}
 	}
 </style>

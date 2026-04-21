@@ -381,14 +381,73 @@
 
 	.sim-disclaimer { font-size: var(--text-xs); color: var(--color-text-muted); margin-top: var(--space-4); font-style: italic; }
 
+	@media (max-width: 1100px) {
+		.sim-layout {
+			grid-template-columns: 340px 1fr;
+			gap: var(--space-6);
+		}
+
+		.sim-summary {
+			gap: var(--space-3);
+		}
+	}
+
 	@media (max-width: 960px) {
 		.sim-layout { grid-template-columns: 1fr; }
 		.sim-input { position: static; }
 		.sim-summary { grid-template-columns: repeat(2, 1fr); }
 	}
 
+	@media (max-width: 768px) {
+		.page-header {
+			padding: 116px 0 var(--space-12);
+		}
+
+		.page-header__subtitle {
+			font-size: var(--text-base);
+		}
+
+		.sim-result__header {
+			flex-direction: column;
+			align-items: stretch;
+		}
+
+		.print-btn {
+			width: 100%;
+			justify-content: center;
+		}
+	}
+
 	@media (max-width: 480px) {
 		.sim-summary { grid-template-columns: 1fr; }
+
+		.sim-input {
+			padding: var(--space-5);
+		}
+
+		.sim-breakdown {
+			padding: var(--space-4);
+		}
+
+		.sim-table {
+			font-size: var(--text-xs);
+		}
+
+		.sim-table th,
+		.sim-table td {
+			padding: var(--space-2) var(--space-3);
+			white-space: normal;
+		}
+	}
+
+	@media (max-width: 900px) and (orientation: landscape) and (max-height: 560px) {
+		.page-header {
+			padding: 90px 0 var(--space-10);
+		}
+
+		.sim-input {
+			position: static;
+		}
 	}
 
 	@media print {

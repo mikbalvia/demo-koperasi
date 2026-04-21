@@ -111,5 +111,20 @@
 	.result__val { font-size: var(--text-sm); font-weight: 600; }
 	.result__val.mono { font-family: monospace; color: var(--color-primary); }
 
-	@media (max-width: 600px) { .search-form { flex-direction: column; } }
+	@media (max-width: 768px) {
+		.page-header { padding: 116px 0 var(--space-12); }
+		.page-header__subtitle { font-size: var(--text-base); }
+	}
+
+	@media (max-width: 600px) {
+		.search-form { flex-direction: column; }
+		.result__header { padding: var(--space-4); }
+		.result__details { padding: var(--space-4); }
+		.result__row { flex-direction: column; align-items: flex-start; gap: var(--space-1); }
+	}
+
+	@media (max-width: 900px) and (orientation: landscape) and (max-height: 560px) {
+		.page-header { padding: 90px 0 var(--space-10); }
+		.search-form { flex-direction: row; }
+	}
 </style>

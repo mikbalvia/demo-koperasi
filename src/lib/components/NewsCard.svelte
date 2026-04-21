@@ -53,6 +53,7 @@
 
 <style>
 	.news-card {
+		width: 100%;
 		background: var(--color-surface);
 		border-radius: var(--radius-xl);
 		border: 1px solid var(--color-border);
@@ -152,5 +153,21 @@
 
 	.news-card__read-more:hover {
 		gap: var(--space-3);
+	}
+
+	@media (max-width: 768px) {
+		.news-card__body {
+			padding: var(--space-4);
+		}
+	}
+
+	@media (max-width: 480px) {
+		.news-card__title {
+			font-size: var(--text-base);
+		}
+
+		.news-card__excerpt {
+			font-size: var(--text-xs);
+		}
 	}
 </style>

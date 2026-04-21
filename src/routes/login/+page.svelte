@@ -507,6 +507,17 @@
 	}
 
 	/* Responsive */
+	@media (max-width: 1100px) {
+		.login-brand {
+			width: 40%;
+			padding: var(--space-8);
+		}
+
+		.login-card {
+			padding: var(--space-8);
+		}
+	}
+
 	@media (max-width: 960px) {
 		.login-brand {
 			display: none;
@@ -518,17 +529,107 @@
 
 		.login-form-panel {
 			padding: var(--space-6);
-			padding-top: 100px;
+			padding-top: 96px;
+			align-items: flex-start;
+		}
+
+		.login-form-panel__inner {
+			max-width: 560px;
+		}
+
+		.role-selector {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
 		}
 	}
 
-	@media (max-width: 480px) {
+	@media (max-width: 960px) and (orientation: landscape) and (min-width: 760px) {
+		.login-page {
+			flex-direction: row;
+		}
+
+		.login-brand {
+			display: flex;
+			width: 38%;
+			padding: var(--space-8) var(--space-6);
+		}
+
+		.login-mobile-brand {
+			display: none;
+		}
+
+		.login-form-panel {
+			padding: var(--space-6) var(--space-5);
+			padding-top: var(--space-8);
+			align-items: center;
+		}
+
+		.login-form-panel__inner {
+			max-width: 480px;
+		}
+	}
+
+	@media (max-width: 768px) {
 		.login-card {
 			padding: var(--space-6);
 		}
 
+		.login-mobile-brand {
+			margin-bottom: var(--space-5);
+		}
+
+		.role-option {
+			padding: var(--space-3);
+		}
+
+		.role-option__desc {
+			font-size: 0.74rem;
+		}
+	}
+
+	@media (max-width: 560px) {
+		.login-form-panel {
+			padding: var(--space-4);
+			padding-top: 84px;
+		}
+
+		.login-form-panel__inner {
+			max-width: none;
+		}
+
 		.role-selector {
 			grid-template-columns: 1fr;
+		}
+	}
+
+	@media (max-width: 420px) {
+		.login-card {
+			padding: var(--space-5);
+		}
+
+		.login-card__subtitle {
+			font-size: var(--text-xs);
+		}
+	}
+
+	@media (max-width: 900px) and (orientation: landscape) and (max-height: 560px) {
+		.login-form-panel {
+			padding-top: var(--space-5);
+		}
+
+		.login-card {
+			padding: var(--space-5);
+		}
+
+		.login-form {
+			gap: var(--space-3);
+		}
+
+		.login-brand__title {
+			font-size: var(--text-2xl);
+		}
+
+		.login-brand__text {
+			margin-bottom: var(--space-5);
 		}
 	}
 </style>

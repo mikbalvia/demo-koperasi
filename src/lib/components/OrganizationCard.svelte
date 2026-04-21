@@ -32,6 +32,7 @@
 
 <style>
 	.org-card {
+		width: 100%;
 		padding: var(--space-6);
 		border-radius: var(--radius-xl);
 		display: flex;
@@ -107,5 +108,32 @@
 
 	.pengawas .org-card__role {
 		color: var(--color-secondary);
+	}
+
+	@media (max-width: 768px) {
+		.org-card {
+			padding: var(--space-5);
+			gap: var(--space-3);
+		}
+
+		.org-card__avatar {
+			width: 72px;
+			height: 72px;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.org-card {
+			padding: var(--space-4);
+		}
+
+		.org-card__avatar {
+			width: 64px;
+			height: 64px;
+		}
+
+		.org-card__name {
+			font-size: var(--text-xs);
+		}
 	}
 </style>

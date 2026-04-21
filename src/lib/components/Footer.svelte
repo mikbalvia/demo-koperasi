@@ -237,9 +237,24 @@
 	}
 
 	/* Responsive */
+	@media (max-width: 1100px) {
+		.footer__grid {
+			grid-template-columns: 1fr 1fr 1fr;
+			gap: var(--space-8);
+		}
+
+		.footer__brand {
+			grid-column: 1 / -1;
+		}
+	}
+
 	@media (max-width: 960px) {
 		.footer__grid {
 			grid-template-columns: 1fr 1fr;
+		}
+
+		.footer__brand {
+			grid-column: 1 / -1;
 		}
 	}
 
