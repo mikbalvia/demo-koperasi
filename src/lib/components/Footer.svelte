@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { profil, navLinks } from '$lib/data/content';
+	import { MapPin, Mail, Globe, ExternalLink, Sparkles } from '@lucide/svelte';
 </script>
 
 <footer class="footer" id="footer">
@@ -34,7 +35,7 @@
 					masyarakat Kelurahan Awirarangan.
 				</p>
 				<div class="footer__badge">
-					<span class="badge badge--gold">✦ Program Pemerintah</span>
+					<span class="badge badge--gold"><Sparkles size={12} strokeWidth={2} /> Program Pemerintah</span>
 				</div>
 			</div>
 
@@ -56,9 +57,10 @@
 					<li><a href="/cek-anggota" class="footer__link">Cek Status Anggota</a></li>
 					<li><a href="/syarat-ketentuan" class="footer__link">Syarat & Ketentuan</a></li>
 					<li>
-						<a href="https://simkopdes.go.id" class="footer__link" target="_blank" rel="noopener"
-							>Simkopdes Pusat ↗</a
-						>
+						<a href="https://simkopdes.go.id" class="footer__link footer__link--ext" target="_blank" rel="noopener">
+							Simkopdes Pusat
+							<ExternalLink size={12} strokeWidth={2} />
+						</a>
 					</li>
 				</ul>
 			</div>
@@ -68,18 +70,16 @@
 				<h4 class="footer__heading">Kontak</h4>
 				<ul class="footer__list footer__list--contact">
 					<li>
-						<span class="footer__icon">📍</span>
+						<MapPin size={14} strokeWidth={2} class="footer__icon" />
 						<span>{profil.alamat}</span>
 					</li>
 					<li>
-						<span class="footer__icon">✉️</span>
+						<Mail size={14} strokeWidth={2} class="footer__icon" />
 						<a href="mailto:{profil.email}" class="footer__link">{profil.email}</a>
 					</li>
 					<li>
-						<span class="footer__icon">🌐</span>
-						<a href={profil.website} class="footer__link" target="_blank" rel="noopener"
-							>merahputih.kop.id</a
-						>
+						<Globe size={14} strokeWidth={2} class="footer__icon" />
+						<a href={profil.website} class="footer__link" target="_blank" rel="noopener">merahputih.kop.id</a>
 					</li>
 				</ul>
 			</div>
@@ -180,9 +180,10 @@
 		font-size: var(--text-sm);
 	}
 
-	.footer__icon {
+	.footer__list--contact :global(.footer__icon) {
 		flex-shrink: 0;
-		font-size: var(--text-sm);
+		margin-top: 3px;
+		color: var(--warm-500);
 	}
 
 	.footer__link {
@@ -193,6 +194,12 @@
 
 	.footer__link:hover {
 		color: white;
+	}
+
+	.footer__link--ext {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
 	}
 
 	/* Bottom */

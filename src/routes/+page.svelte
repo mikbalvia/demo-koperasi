@@ -7,6 +7,7 @@
 	import NewsCard from '$lib/components/NewsCard.svelte';
 	import LegalityBadge from '$lib/components/LegalityBadge.svelte';
 	import { onMount } from 'svelte';
+	import { ArrowRight, Target, Rocket, BookOpen, Sparkles, Mail, ChevronDown } from '@lucide/svelte';
 
 	let heroVisible = $state(false);
 
@@ -43,6 +44,7 @@
 <!-- ===== HERO ===== -->
 <section class="hero" id="hero">
 	<div class="hero__bg">
+		<img src="/images/hero-bg.png" alt="" class="hero__bg-img" />
 		<div class="hero__gradient"></div>
 		<div class="hero__pattern"></div>
 		<div class="hero__orbs">
@@ -54,7 +56,7 @@
 
 	<div class="container hero__content" class:visible={heroVisible}>
 		<div class="hero__badge">
-			<span class="badge badge--gold">✦ Program Kementerian Koperasi RI</span>
+			<span class="badge badge--gold"><Sparkles size={12} strokeWidth={2} /> Program Kementerian Koperasi RI</span>
 		</div>
 		<h1 class="hero__title">
 			Koperasi Kelurahan<br />
@@ -67,12 +69,11 @@
 		<div class="hero__actions">
 			<a href="/info-pendaftaran" class="btn btn--primary btn--lg">
 				Daftar Menjadi Anggota
-				<svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-					<path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-				</svg>
+				<ArrowRight size={18} strokeWidth={2} />
 			</a>
 			<a href="#profil" class="btn btn--secondary btn--lg">
 				Pelajari Lebih Lanjut
+				<ChevronDown size={18} strokeWidth={2} />
 			</a>
 		</div>
 	</div>
@@ -97,14 +98,14 @@
 		<div class="profil-grid">
 			<!-- Visi -->
 			<div class="profil-card animate-on-scroll delay-1">
-				<div class="profil-card__icon">🎯</div>
+				<div class="profil-card__icon-wrap"><Target size={24} strokeWidth={1.5} /></div>
 				<h3 class="profil-card__title">Visi</h3>
 				<p class="profil-card__text">{profil.visi}</p>
 			</div>
 
 			<!-- Misi -->
 			<div class="profil-card profil-card--misi animate-on-scroll delay-2">
-				<div class="profil-card__icon">🚀</div>
+				<div class="profil-card__icon-wrap"><Rocket size={24} strokeWidth={1.5} /></div>
 				<h3 class="profil-card__title">Misi</h3>
 				<ol class="profil-card__list">
 					{#each profil.misi as item}
@@ -115,7 +116,10 @@
 
 			<!-- Sejarah -->
 			<div class="profil-card profil-card--sejarah animate-on-scroll delay-3">
-				<div class="profil-card__icon">📖</div>
+				<div class="profil-card__icon-wrap"><BookOpen size={24} strokeWidth={1.5} /></div>
+				<div class="profil-card__image">
+					<img src="/images/about-koperasi.png" alt="Toko Koperasi" loading="lazy" />
+				</div>
 				<h3 class="profil-card__title">Sejarah Singkat</h3>
 				<p class="profil-card__text">{profil.sejarah}</p>
 			</div>
@@ -236,9 +240,7 @@
 		<div class="berita-more animate-on-scroll">
 			<a href="/berita" class="btn btn--outline btn--lg">
 				Lihat Semua Berita
-				<svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-					<path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-				</svg>
+				<ArrowRight size={16} strokeWidth={2} />
 			</a>
 		</div>
 	</div>
@@ -278,8 +280,10 @@
 		<div class="cta-section__actions">
 			<a href="/info-pendaftaran" class="btn btn--primary btn--lg">
 				Daftar Sekarang
+				<ArrowRight size={18} strokeWidth={2} />
 			</a>
 			<a href="mailto:{profil.email}" class="btn btn--secondary btn--lg">
+				<Mail size={18} strokeWidth={2} />
 				Hubungi Kami
 			</a>
 		</div>
@@ -305,17 +309,27 @@
 		z-index: 0;
 	}
 
+	.hero__bg-img {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		z-index: 0;
+	}
+
 	.hero__gradient {
 		position: absolute;
 		inset: 0;
 		background: linear-gradient(
 			150deg,
-			#7f1d1d 0%,
-			#991b1b 25%,
-			#b91c1c 50%,
-			#92400e 75%,
-			#78350f 100%
+			rgba(127, 29, 29, 0.92) 0%,
+			rgba(153, 27, 27, 0.88) 25%,
+			rgba(185, 28, 28, 0.85) 50%,
+			rgba(146, 64, 14, 0.88) 75%,
+			rgba(120, 53, 15, 0.92) 100%
 		);
+		z-index: 1;
 	}
 
 	.hero__pattern {
@@ -448,9 +462,28 @@
 		box-shadow: var(--shadow-lg);
 	}
 
-	.profil-card__icon {
-		font-size: var(--text-3xl);
+	.profil-card__icon-wrap {
+		width: 52px;
+		height: 52px;
+		border-radius: var(--radius-lg);
+		background: linear-gradient(135deg, var(--red-50), var(--gold-50));
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: var(--color-primary);
 		margin-bottom: var(--space-4);
+	}
+
+	.profil-card__image {
+		border-radius: var(--radius-lg);
+		overflow: hidden;
+		margin-bottom: var(--space-4);
+	}
+
+	.profil-card__image img {
+		width: 100%;
+		height: 180px;
+		object-fit: cover;
 	}
 
 	.profil-card__title {

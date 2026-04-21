@@ -3,6 +3,7 @@
 	import NewsCard from '$lib/components/NewsCard.svelte';
 	import SectionHeading from '$lib/components/SectionHeading.svelte';
 	import { onMount } from 'svelte';
+	import { Newspaper } from '@lucide/svelte';
 
 	let activeFilter = $state('Semua');
 	const categories = ['Semua', ...new Set(berita.map((b) => b.kategori))];
@@ -28,7 +29,7 @@
 <section class="page-header">
 	<div class="page-header__bg"></div>
 	<div class="container page-header__content">
-		<span class="badge badge--gold">📰 Warta Koperasi</span>
+		<span class="badge badge--gold"><Newspaper size={12} strokeWidth={2} /> Warta Koperasi</span>
 		<h1 class="page-header__title">Berita & Informasi</h1>
 		<p class="page-header__subtitle">Ikuti kegiatan dan pengumuman terbaru dari Koperasi Merah Putih Awirarangan.</p>
 	</div>

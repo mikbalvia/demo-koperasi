@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { DokumenLegalitas } from '$lib/types';
+	import { ScrollText, BadgeCheck, Building2, Check } from '@lucide/svelte';
 
 	interface Props {
 		dokumen: DokumenLegalitas;
@@ -7,23 +8,36 @@
 
 	let { dokumen }: Props = $props();
 
+	const iconMap: Record<string, typeof ScrollText> = {
+		'scroll-text': ScrollText,
+		'badge-check': BadgeCheck,
+		'building-2': Building2
+	};
+
 	const statusConfig = {
 		aktif: { label: 'Aktif', class: 'badge--green' },
 		terverifikasi: { label: 'Terverifikasi', class: 'badge--gold' },
 		terdaftar: { label: 'Terdaftar & Sah', class: 'badge--green' }
 	};
+
+	const IconComponent = $derived(iconMap[dokumen.icon]);
 </script>
 
 <div class="legality">
 	<div class="legality__header">
-		<span class="legality__icon">{dokumen.icon}</span>
+		<div class="legality__icon-wrap">
+			{#if IconComponent}
+				<IconComponent size={22} strokeWidth={1.5} />
+			{/if}
+		</div>
 		<div>
 			<h4 class="legality__name">{dokumen.nama}</h4>
 			<p class="legality__desc">{dokumen.deskripsi}</p>
 		</div>
 	</div>
 	<span class="badge {statusConfig[dokumen.status].class}">
-		✓ {statusConfig[dokumen.status].label}
+		<Check size={12} strokeWidth={3} />
+		{statusConfig[dokumen.status].label}
 	</span>
 </div>
 
@@ -53,9 +67,16 @@
 		gap: var(--space-3);
 	}
 
-	.legality__icon {
-		font-size: var(--text-2xl);
-		flex-shrink: 0;
+	.legality__icon-wrap {
+		width: 44px;
+		height: 44px;
+		min-width: 44px;
+		border-radius: var(--radius-md);
+		background: linear-gradient(135deg, var(--red-50), var(--gold-50));
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: var(--color-primary);
 	}
 
 	.legality__name {

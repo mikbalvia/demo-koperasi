@@ -1,5 +1,7 @@
 <script lang="ts">
 	import type { Berita } from '$lib/types';
+	import { ArrowRight, Calendar } from '@lucide/svelte';
+	import { Newspaper } from '@lucide/svelte';
 
 	interface Props {
 		berita: Berita;
@@ -24,22 +26,27 @@
 
 <article class="news-card">
 	<div class="news-card__thumb">
-		<div class="news-card__thumb-placeholder">
-			<span>📰</span>
-		</div>
+		{#if berita.thumbnail}
+			<img src={berita.thumbnail} alt={berita.judul} class="news-card__img" loading="lazy" />
+		{:else}
+			<div class="news-card__thumb-placeholder">
+				<Newspaper size={32} strokeWidth={1.5} />
+			</div>
+		{/if}
 	</div>
 	<div class="news-card__body">
 		<div class="news-card__meta">
 			<span class="badge {categoryColors[berita.kategori] || 'badge--red'}">{berita.kategori}</span>
-			<time class="news-card__date">{dateFormatted}</time>
+			<span class="news-card__date">
+				<Calendar size={12} strokeWidth={2} />
+				<time>{dateFormatted}</time>
+			</span>
 		</div>
 		<h3 class="news-card__title">{berita.judul}</h3>
 		<p class="news-card__excerpt">{berita.ringkasan}</p>
 		<a href="/berita/{berita.id}" class="news-card__read-more">
 			Baca Selengkapnya
-			<svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-				<path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-			</svg>
+			<ArrowRight size={16} strokeWidth={2} />
 		</a>
 	</div>
 </article>
@@ -67,6 +74,17 @@
 		overflow: hidden;
 	}
 
+	.news-card__img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+	}
+
+	.news-card:hover .news-card__img {
+		transform: scale(1.05);
+	}
+
 	.news-card__thumb-placeholder {
 		width: 100%;
 		height: 100%;
@@ -74,7 +92,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		font-size: var(--text-3xl);
+		color: var(--color-text-muted);
 	}
 
 	.news-card__body {
@@ -92,6 +110,9 @@
 	}
 
 	.news-card__date {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
 		font-size: var(--text-xs);
 		color: var(--color-text-muted);
 	}

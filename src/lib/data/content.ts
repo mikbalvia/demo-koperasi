@@ -36,10 +36,10 @@ export const pengurus: Pengurus[] = [
 ];
 
 export const statistik: Statistik[] = [
-	{ label: 'Total Anggota', value: 1247, icon: '👥', suffix: '' },
-	{ label: 'Unit Usaha Aktif', value: 5, icon: '🏪', suffix: '' },
-	{ label: 'Total Simpanan', value: 850, icon: '💰', suffix: ' Juta' },
-	{ label: 'SHU Tahun Lalu', value: 120, icon: '📈', suffix: ' Juta' }
+	{ label: 'Total Anggota', value: 1247, icon: 'users', suffix: '' },
+	{ label: 'Unit Usaha Aktif', value: 5, icon: 'store', suffix: '' },
+	{ label: 'Total Simpanan', value: 850, icon: 'wallet', suffix: ' Juta' },
+	{ label: 'SHU Tahun Lalu', value: 120, icon: 'trending-up', suffix: ' Juta' }
 ];
 
 export const layanan: Layanan[] = [
@@ -47,19 +47,19 @@ export const layanan: Layanan[] = [
 		judul: 'Kebutuhan Pokok & Sembako',
 		deskripsi:
 			'Menyediakan sembako dan kebutuhan pokok sehari-hari dengan harga bersahabat untuk menjaga daya beli masyarakat.',
-		icon: '🛒'
+		icon: 'shopping-cart'
 	},
 	{
 		judul: 'Air Minum Dalam Kemasan',
 		deskripsi:
 			'Produksi dan distribusi air minum dalam kemasan (AMDK) berkualitas untuk memenuhi kebutuhan konsumsi harian.',
-		icon: '💧'
+		icon: 'droplets'
 	},
 	{
 		judul: 'Jasa Keuangan',
 		deskripsi:
 			'Layanan simpan pinjam dengan bunga rendah dan proses mudah, membantu anggota mengelola keuangan dengan baik.',
-		icon: '🏦'
+		icon: 'landmark'
 	}
 ];
 
@@ -70,7 +70,8 @@ export const berita: Berita[] = [
 		ringkasan:
 			'RAT 2026 dihadiri oleh seluruh anggota aktif dan menghasilkan keputusan penting mengenai program kerja tahun depan serta pembagian SHU.',
 		tanggal: '2026-03-15',
-		kategori: 'Kegiatan'
+		kategori: 'Kegiatan',
+		thumbnail: '/images/news-rapat.png'
 	},
 	{
 		id: 'program-sembako-murah',
@@ -78,7 +79,8 @@ export const berita: Berita[] = [
 		ringkasan:
 			'Koperasi berhasil menjalankan program sembako murah yang berdampak langsung pada 500 keluarga di Kelurahan Awirarangan.',
 		tanggal: '2026-02-20',
-		kategori: 'Program'
+		kategori: 'Program',
+		thumbnail: '/images/news-sembako.png'
 	},
 	{
 		id: 'pelatihan-digital',
@@ -86,7 +88,8 @@ export const berita: Berita[] = [
 		ringkasan:
 			'Sebanyak 25 pengurus dan anggota mengikuti pelatihan literasi digital guna meningkatkan tata kelola koperasi modern.',
 		tanggal: '2026-01-10',
-		kategori: 'Pelatihan'
+		kategori: 'Pelatihan',
+		thumbnail: '/images/news-pelatihan.png'
 	},
 	{
 		id: 'kerjasama-pemda',
@@ -94,7 +97,8 @@ export const berita: Berita[] = [
 		ringkasan:
 			'KKMP Awirarangan resmi menandatangani nota kesepahaman dengan Pemerintah Kabupaten Kuningan untuk pengembangan ekonomi desa.',
 		tanggal: '2025-12-05',
-		kategori: 'Kerjasama'
+		kategori: 'Kerjasama',
+		thumbnail: '/images/news-kerjasama.png'
 	},
 	{
 		id: 'launching-amdk',
@@ -102,7 +106,8 @@ export const berita: Berita[] = [
 		ringkasan:
 			'Unit usaha AMDK koperasi resmi meluncurkan brand baru "Awirarangan Fresh" dengan kemasan modern dan kualitas terjamin.',
 		tanggal: '2025-11-18',
-		kategori: 'Usaha'
+		kategori: 'Usaha',
+		thumbnail: '/images/news-amdk.png'
 	},
 	{
 		id: 'bakti-sosial',
@@ -110,7 +115,8 @@ export const berita: Berita[] = [
 		ringkasan:
 			'Memperingati Hari Koperasi Nasional, KKMP Awirarangan menggelar bakti sosial berupa pembagian 300 paket sembako gratis.',
 		tanggal: '2025-07-12',
-		kategori: 'Kegiatan'
+		kategori: 'Kegiatan',
+		thumbnail: '/images/news-baksos.png'
 	}
 ];
 
@@ -119,20 +125,20 @@ export const dokumenLegalitas: DokumenLegalitas[] = [
 		nama: 'Akta Pendirian',
 		deskripsi: 'Dokumen dasar pembentukan koperasi yang disahkan oleh notaris.',
 		status: 'terdaftar',
-		icon: '📜'
+		icon: 'scroll-text'
 	},
 	{
 		nama: 'SK Kemenkumham',
 		deskripsi:
 			'Surat Keputusan pengesahan badan hukum dari Kementerian Hukum dan HAM.',
 		status: 'terverifikasi',
-		icon: '✅'
+		icon: 'badge-check'
 	},
 	{
 		nama: 'Nomor Induk Berusaha (NIB)',
 		deskripsi: 'Identitas pelaku usaha yang diterbitkan melalui sistem OSS.',
 		status: 'aktif',
-		icon: '🏛️'
+		icon: 'building-2'
 	}
 ];
 

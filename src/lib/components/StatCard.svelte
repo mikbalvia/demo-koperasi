@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { Statistik } from '$lib/types';
 	import { onMount } from 'svelte';
+	import { Users, Store, Wallet, TrendingUp } from '@lucide/svelte';
 
 	interface Props {
 		stat: Statistik;
@@ -8,6 +9,13 @@
 	}
 
 	let { stat, delay = 0 }: Props = $props();
+
+	const iconMap: Record<string, typeof Users> = {
+		users: Users,
+		store: Store,
+		wallet: Wallet,
+		'trending-up': TrendingUp
+	};
 
 	let displayed = $state(0);
 	let visible = $state(false);
@@ -46,6 +54,8 @@
 
 		setTimeout(() => requestAnimationFrame(update), delay);
 	}
+
+	const IconComponent = $derived(iconMap[stat.icon]);
 </script>
 
 <div
@@ -54,7 +64,11 @@
 	class:visible
 	style="animation-delay: {delay}ms"
 >
-	<div class="stat-card__icon">{stat.icon}</div>
+	<div class="stat-card__icon">
+		{#if IconComponent}
+			<IconComponent size={28} strokeWidth={1.5} />
+		{/if}
+	</div>
 	<div class="stat-card__value">
 		{displayed.toLocaleString('id-ID')}{stat.suffix || ''}
 	</div>
@@ -89,8 +103,15 @@
 	}
 
 	.stat-card__icon {
-		font-size: var(--text-3xl);
-		margin-bottom: var(--space-3);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 56px;
+		height: 56px;
+		margin: 0 auto var(--space-3);
+		border-radius: var(--radius-lg);
+		background: rgba(255, 255, 255, 0.1);
+		color: var(--gold-300);
 	}
 
 	.stat-card__value {

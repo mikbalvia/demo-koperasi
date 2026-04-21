@@ -1,5 +1,6 @@
 <script lang="ts">
 	import SectionHeading from '$lib/components/SectionHeading.svelte';
+	import { ScrollText } from '@lucide/svelte';
 </script>
 
 <svelte:head>
@@ -10,7 +11,7 @@
 <section class="page-header">
 	<div class="page-header__bg"></div>
 	<div class="container page-header__content">
-		<span class="badge badge--gold">📜 Dokumen Resmi</span>
+		<span class="badge badge--gold"><ScrollText size={12} strokeWidth={2} /> Dokumen Resmi</span>
 		<h1 class="page-header__title">Syarat & Ketentuan</h1>
 		<p class="page-header__subtitle">
 			Hak, kewajiban, dan ketentuan keanggotaan Koperasi Kelurahan Merah Putih Awirarangan.

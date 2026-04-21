@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Layanan } from '$lib/types';
+	import { ShoppingCart, Droplets, Landmark } from '@lucide/svelte';
 
 	interface Props {
 		layanan: Layanan;
@@ -7,11 +8,21 @@
 	}
 
 	let { layanan, index = 0 }: Props = $props();
+
+	const iconMap: Record<string, typeof ShoppingCart> = {
+		'shopping-cart': ShoppingCart,
+		droplets: Droplets,
+		landmark: Landmark
+	};
+
+	const IconComponent = $derived(iconMap[layanan.icon]);
 </script>
 
 <div class="service-card" style="--delay: {index * 100}ms">
 	<div class="service-card__icon-wrap">
-		<span class="service-card__icon">{layanan.icon}</span>
+		{#if IconComponent}
+			<IconComponent size={28} strokeWidth={1.5} />
+		{/if}
 	</div>
 	<h3 class="service-card__title">{layanan.judul}</h3>
 	<p class="service-card__desc">{layanan.deskripsi}</p>
@@ -61,15 +72,12 @@
 		align-items: center;
 		justify-content: center;
 		margin-bottom: var(--space-5);
+		color: var(--color-primary);
 		transition: transform var(--transition-spring);
 	}
 
 	.service-card:hover .service-card__icon-wrap {
 		transform: scale(1.1) rotate(-3deg);
-	}
-
-	.service-card__icon {
-		font-size: var(--text-2xl);
 	}
 
 	.service-card__title {

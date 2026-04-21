@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { Search } from '@lucide/svelte';
 	let nik = $state('');
 	let searched = $state(false);
 	let loading = $state(false);
@@ -30,7 +31,7 @@
 <section class="page-header">
 	<div class="page-header__bg"></div>
 	<div class="container page-header__content">
-		<span class="badge badge--gold">🔍 Verifikasi</span>
+		<span class="badge badge--gold"><Search size={12} strokeWidth={2} /> Verifikasi</span>
 		<h1 class="page-header__title">Cek Status Anggota</h1>
 		<p class="page-header__subtitle">Masukkan NIK atau Nomor Anggota untuk memeriksa status keanggotaan.</p>
 	</div>

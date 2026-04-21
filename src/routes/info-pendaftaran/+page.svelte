@@ -2,6 +2,7 @@
 	import { syaratKeanggotaan, prosedurPendaftaran, faqItems } from '$lib/data/content';
 	import SectionHeading from '$lib/components/SectionHeading.svelte';
 	import { onMount } from 'svelte';
+	import { ClipboardList, ChevronDown } from '@lucide/svelte';
 
 	let openFaq = $state(-1);
 
@@ -32,7 +33,7 @@
 <section class="page-header">
 	<div class="page-header__bg"></div>
 	<div class="container page-header__content">
-		<span class="badge badge--gold">📋 Informasi Pendaftaran</span>
+		<span class="badge badge--gold"><ClipboardList size={12} strokeWidth={2} /> Informasi Pendaftaran</span>
 		<h1 class="page-header__title">Daftar Menjadi Anggota</h1>
 		<p class="page-header__subtitle">
 			Bergabunglah bersama kami untuk membangun ekonomi kerakyatan yang kuat dan mandiri.
@@ -96,9 +97,7 @@
 				<div class="faq-item animate-on-scroll" class:open={openFaq === i}>
 					<button class="faq-item__question" onclick={() => toggleFaq(i)}>
 						<span>{item.pertanyaan}</span>
-						<svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none">
-							<path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-						</svg>
+						<span class="faq-item__chevron"><ChevronDown size={20} strokeWidth={2} /></span>
 					</button>
 					<div class="faq-item__answer">
 						<p>{item.jawaban}</p>
