@@ -7,6 +7,8 @@
 
 	let { children } = $props();
 
+	let isAuthPage = $derived($page.url.pathname === '/login');
+
 	// Scroll-to-top on route change
 	$effect(() => {
 		$page.url.pathname;
@@ -34,13 +36,16 @@
 		return () => observer.disconnect();
 	});
 </script>
-
 <div class="app grain">
-	<Navbar />
+	{#if !isAuthPage}
+		<Navbar />
+	{/if}
 	<main>
 		{@render children()}
 	</main>
-	<Footer />
+	{#if !isAuthPage}
+		<Footer />
+	{/if}
 </div>
 
 <style>

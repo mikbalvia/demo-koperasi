@@ -67,7 +67,7 @@
 			Membangun Ekonomi Kerakyatan Berbasis Gotong Royong untuk Kesejahteraan Anggota dan Masyarakat Kelurahan Awirarangan
 		</p>
 		<div class="hero__actions">
-			<a href="/info-pendaftaran" class="btn btn--primary btn--lg">
+			<a href="/register" class="btn btn--primary btn--lg">
 				Daftar Menjadi Anggota
 				<ArrowRight size={18} strokeWidth={2} />
 			</a>
@@ -78,8 +78,8 @@
 		</div>
 	</div>
 
-	<!-- Stats floating at bottom of hero -->
-	<div class="hero__stats container">
+<!-- Stats floating overlapping hero and next section -->
+	<div class="hero__stats-wrapper container">
 		<div class="hero__stats-grid">
 			{#each statistik as stat, i}
 				<StatCard {stat} delay={i * 150} />
@@ -95,16 +95,29 @@
 			<SectionHeading title="Profil Koperasi" subtitle="Visi, Misi, dan Sejarah singkat Koperasi Kelurahan Merah Putih Awirarangan." />
 		</div>
 
-		<div class="profil-grid">
+		<div class="bento-grid profil-bento">
+			<!-- Sejarah -->
+			<div class="bento-item bento-item--glow profil-sejarah animate-on-scroll delay-1">
+				<div class="bento-image-bg">
+					<img src="/images/about-koperasi.png" alt="Toko Koperasi" loading="lazy" />
+					<div class="bento-image-overlay"></div>
+				</div>
+				<div class="bento-content">
+					<div class="profil-card__icon-wrap glass"><BookOpen size={24} strokeWidth={1.5} /></div>
+					<h3 class="profil-card__title text-white">Sejarah Singkat</h3>
+					<p class="profil-card__text text-white-70">{profil.sejarah}</p>
+				</div>
+			</div>
+
 			<!-- Visi -->
-			<div class="profil-card animate-on-scroll delay-1">
+			<div class="bento-item bento-item--glow profil-visi animate-on-scroll delay-2">
 				<div class="profil-card__icon-wrap"><Target size={24} strokeWidth={1.5} /></div>
 				<h3 class="profil-card__title">Visi</h3>
 				<p class="profil-card__text">{profil.visi}</p>
 			</div>
 
 			<!-- Misi -->
-			<div class="profil-card profil-card--misi animate-on-scroll delay-2">
+			<div class="bento-item bento-item--glow profil-misi animate-on-scroll delay-3">
 				<div class="profil-card__icon-wrap"><Rocket size={24} strokeWidth={1.5} /></div>
 				<h3 class="profil-card__title">Misi</h3>
 				<ol class="profil-card__list">
@@ -112,16 +125,6 @@
 						<li>{item}</li>
 					{/each}
 				</ol>
-			</div>
-
-			<!-- Sejarah -->
-			<div class="profil-card profil-card--sejarah animate-on-scroll delay-3">
-				<div class="profil-card__icon-wrap"><BookOpen size={24} strokeWidth={1.5} /></div>
-				<div class="profil-card__image">
-					<img src="/images/about-koperasi.png" alt="Toko Koperasi" loading="lazy" />
-				</div>
-				<h3 class="profil-card__title">Sejarah Singkat</h3>
-				<p class="profil-card__text">{profil.sejarah}</p>
 			</div>
 		</div>
 	</div>
@@ -183,85 +186,55 @@
 	</div>
 </section>
 
-<!-- ===== IDENTITAS BADAN HUKUM ===== -->
-<section class="section section--dark" id="identitas">
-	<div class="container">
+<!-- ===== KEPERCAYAAN & LEGALITAS ===== -->
+<section class="section section--dark trust-section" id="legalitas">
+	<div class="trust-section__pattern"></div>
+	<div class="container relative-z">
 		<div class="animate-on-scroll">
 			<SectionHeading
-				title="Identitas Badan Hukum"
-				subtitle="Informasi resmi sesuai dengan dokumen yang terdaftar."
+				title="Kepercayaan & Legalitas"
+				subtitle="Informasi resmi badan hukum dan dokumen legalitas Koperasi Kelurahan Merah Putih Awirarangan."
 				light
 			/>
 		</div>
 
-		<div class="identitas-grid animate-on-scroll">
-			<div class="identitas-item">
-				<span class="identitas-label">Nama Resmi</span>
-				<span class="identitas-value">{profil.namaResmi}</span>
-			</div>
-			<div class="identitas-item">
-				<span class="identitas-label">Bentuk Usaha</span>
-				<span class="identitas-value">{profil.bentukUsaha}</span>
-			</div>
-			<div class="identitas-item">
-				<span class="identitas-label">Jenis Koperasi</span>
-				<span class="identitas-value">{profil.jenisKoperasi}</span>
-			</div>
-			<div class="identitas-item">
-				<span class="identitas-label">Nomor Induk Koperasi (NIK)</span>
-				<span class="identitas-value identitas-value--mono">{profil.nik}</span>
-			</div>
-			<div class="identitas-item identitas-item--full">
-				<span class="identitas-label">Alamat Lengkap</span>
-				<span class="identitas-value">{profil.alamat}</span>
-			</div>
-		</div>
-	</div>
-</section>
-
-<!-- ===== BERITA ===== -->
-<section class="section" id="berita">
-	<div class="container">
-		<div class="animate-on-scroll">
-			<SectionHeading
-				title="Berita & Informasi"
-				subtitle="Ikuti kegiatan dan pengumuman terbaru dari Koperasi Merah Putih Awirarangan."
-			/>
-		</div>
-
-		<div class="berita-grid">
-			{#each berita.slice(0, 3) as item}
-				<div class="animate-on-scroll">
-					<NewsCard berita={item} />
+		<div class="trust-grid">
+			<div class="trust-identitas animate-on-scroll delay-1">
+				<div class="glass-dark trust-card">
+					<h3 class="trust-card__title">Identitas Resmi</h3>
+					<div class="identitas-list">
+						<div class="identitas-item">
+							<span class="identitas-label">Nama Resmi</span>
+							<span class="identitas-value">{profil.namaResmi}</span>
+						</div>
+						<div class="identitas-item">
+							<span class="identitas-label">Bentuk Usaha</span>
+							<span class="identitas-value">{profil.bentukUsaha}</span>
+						</div>
+						<div class="identitas-item">
+							<span class="identitas-label">Jenis Koperasi</span>
+							<span class="identitas-value">{profil.jenisKoperasi}</span>
+						</div>
+						<div class="identitas-item">
+							<span class="identitas-label">Nomor Induk Koperasi (NIK)</span>
+							<span class="identitas-value identitas-value--mono">{profil.nik}</span>
+						</div>
+						<div class="identitas-item identitas-item--full">
+							<span class="identitas-label">Alamat Lengkap</span>
+							<span class="identitas-value">{profil.alamat}</span>
+						</div>
+					</div>
 				</div>
-			{/each}
-		</div>
+			</div>
 
-		<div class="berita-more animate-on-scroll">
-			<a href="/berita" class="btn btn--outline btn--lg">
-				Lihat Semua Berita
-				<ArrowRight size={16} strokeWidth={2} />
-			</a>
-		</div>
-	</div>
-</section>
-
-<!-- ===== LEGALITAS ===== -->
-<section class="section section--alt" id="legalitas">
-	<div class="container">
-		<div class="animate-on-scroll">
-			<SectionHeading
-				title="Dokumen Legalitas"
-				subtitle="Status dokumen hukum utama yang dimiliki koperasi."
-			/>
-		</div>
-
-		<div class="legalitas-list">
-			{#each dokumenLegalitas as doc}
-				<div class="animate-on-scroll">
-					<LegalityBadge dokumen={doc} />
+			<div class="trust-legalitas animate-on-scroll delay-2">
+				<h3 class="trust-card__title text-center mb-6">Dokumen Legalitas</h3>
+				<div class="legalitas-list">
+					{#each dokumenLegalitas as doc}
+						<LegalityBadge dokumen={doc} />
+					{/each}
 				</div>
-			{/each}
+			</div>
 		</div>
 	</div>
 </section>
@@ -278,7 +251,7 @@
 			Jadilah bagian dari gerakan ekonomi kerakyatan. Daftar menjadi anggota koperasi dan nikmati berbagai manfaat untuk kesejahteraan keluarga Anda.
 		</p>
 		<div class="cta-section__actions">
-			<a href="/info-pendaftaran" class="btn btn--primary btn--lg">
+			<a href="/register" class="btn btn--primary btn--lg">
 				Daftar Sekarang
 				<ArrowRight size={18} strokeWidth={2} />
 			</a>
@@ -294,19 +267,23 @@
 	/* ===== HERO ===== */
 	.hero {
 		position: relative;
-		min-height: 100vh;
+		min-height: calc(100vh - 60px);
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		padding-top: 100px;
-		padding-bottom: var(--space-32);
-		overflow: hidden;
+		padding-top: 140px;
+		padding-bottom: var(--space-20);
+		margin-bottom: var(--space-12);
 	}
 
 	.hero__bg {
 		position: absolute;
 		inset: 0;
 		z-index: 0;
+		overflow: hidden;
+		border-bottom-left-radius: var(--radius-2xl);
+		border-bottom-right-radius: var(--radius-2xl);
+		box-shadow: var(--shadow-2xl);
 	}
 
 	.hero__bg-img {
@@ -428,10 +405,13 @@
 		flex-wrap: wrap;
 	}
 
-	.hero__stats {
-		position: relative;
-		z-index: 1;
-		margin-top: var(--space-16);
+	.hero__stats-wrapper {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 10;
+		transform: translateY(50%);
 	}
 
 	.hero__stats-grid {
@@ -440,27 +420,55 @@
 		gap: var(--space-4);
 	}
 
-	/* ===== PROFIL ===== */
-	.profil-grid {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: var(--space-6);
+	/* ===== PROFIL (BENTO) ===== */
+	.profil-bento {
+		margin-top: var(--space-8);
 	}
 
-	.profil-card {
-		background: var(--color-surface);
-		border-radius: var(--radius-xl);
+	.profil-sejarah {
+		grid-column: span 7;
+		grid-row: span 2;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		min-height: 450px;
+	}
+
+	.profil-visi {
+		grid-column: span 5;
+	}
+
+	.profil-misi {
+		grid-column: span 5;
+	}
+
+	.bento-image-bg {
+		position: absolute;
+		inset: 0;
+		z-index: 0;
+	}
+
+	.bento-image-bg img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.bento-image-overlay {
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(to top, rgba(26, 26, 22, 0.95) 0%, rgba(26, 26, 22, 0.5) 50%, transparent 100%);
+	}
+
+	.bento-content {
+		position: relative;
+		z-index: 1;
 		padding: var(--space-8);
-		border: 1px solid var(--color-border);
-		transition:
-			transform var(--transition-base),
-			box-shadow var(--transition-base);
 	}
 
-	.profil-card:hover {
-		transform: translateY(-4px);
-		box-shadow: var(--shadow-lg);
-	}
+	.text-white { color: white !important; }
+	.text-white-70 { color: rgba(255, 255, 255, 0.75) !important; }
 
 	.profil-card__icon-wrap {
 		width: 52px;
@@ -474,18 +482,6 @@
 		margin-bottom: var(--space-4);
 	}
 
-	.profil-card__image {
-		border-radius: var(--radius-lg);
-		overflow: hidden;
-		margin-bottom: var(--space-4);
-	}
-
-	.profil-card__image img {
-		width: 100%;
-		height: 180px;
-		object-fit: cover;
-	}
-
 	.profil-card__title {
 		font-size: var(--text-2xl);
 		margin-bottom: var(--space-3);
@@ -496,11 +492,6 @@
 		font-size: var(--text-sm);
 		color: var(--color-text-secondary);
 		line-height: 1.8;
-	}
-
-	.profil-card--misi {
-		grid-row: 1 / 3;
-		grid-column: 2;
 	}
 
 	.profil-card__list {
@@ -594,7 +585,7 @@
 		grid-template-columns: repeat(5, 1fr);
 	}
 
-	/* ===== IDENTITAS (Dark Section) ===== */
+	/* ===== KEPERCAYAAN & LEGALITAS (Dark Section) ===== */
 	.section--dark {
 		background: linear-gradient(150deg, var(--warm-800), var(--warm-900));
 		color: white;
@@ -602,26 +593,55 @@
 		overflow: hidden;
 	}
 
-	.identitas-grid {
+	.trust-section__pattern {
+		position: absolute;
+		inset: 0;
+		opacity: 0.05;
+		background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+	}
+
+	.relative-z {
+		position: relative;
+		z-index: 1;
+	}
+
+	.trust-grid {
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: 1fr 1fr;
+		gap: var(--space-8);
+		align-items: flex-start;
+	}
+
+	.trust-card {
+		padding: var(--space-8);
+		border-radius: var(--radius-2xl);
+	}
+
+	.trust-card__title {
+		font-size: var(--text-2xl);
+		margin-bottom: var(--space-6);
+		color: var(--gold-300);
+	}
+
+	.mb-6 { margin-bottom: var(--space-6); }
+	.text-center { text-align: center; }
+
+	.identitas-list {
+		display: flex;
+		flex-direction: column;
 		gap: var(--space-4);
 	}
 
 	.identitas-item {
-		background: rgba(255, 255, 255, 0.06);
-		border: 1px solid rgba(255, 255, 255, 0.08);
-		border-radius: var(--radius-lg);
-		padding: var(--space-5);
-		transition: background var(--transition-fast);
+		display: flex;
+		flex-direction: column;
+		padding-bottom: var(--space-4);
+		border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 	}
 
-	.identitas-item:hover {
-		background: rgba(255, 255, 255, 0.1);
-	}
-
-	.identitas-item--full {
-		grid-column: 1 / -1;
+	.identitas-item:last-child {
+		border-bottom: none;
+		padding-bottom: 0;
 	}
 
 	.identitas-label {
@@ -631,7 +651,7 @@
 		text-transform: uppercase;
 		letter-spacing: 0.06em;
 		font-weight: 600;
-		margin-bottom: var(--space-2);
+		margin-bottom: var(--space-1);
 	}
 
 	.identitas-value {
@@ -647,6 +667,12 @@
 		color: var(--gold-400);
 	}
 
+	.legalitas-list {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-3);
+	}
+
 	/* ===== BERITA ===== */
 	.berita-grid {
 		display: grid;
@@ -657,15 +683,6 @@
 	.berita-more {
 		text-align: center;
 		margin-top: var(--space-10);
-	}
-
-	/* ===== LEGALITAS ===== */
-	.legalitas-list {
-		display: flex;
-		flex-direction: column;
-		gap: var(--space-3);
-		max-width: 800px;
-		margin: 0 auto;
 	}
 
 	/* ===== CTA ===== */
@@ -722,17 +739,25 @@
 
 	/* ===== RESPONSIVE ===== */
 	@media (max-width: 960px) {
+		.hero {
+			min-height: auto;
+			padding-bottom: var(--space-16);
+			margin-bottom: 0;
+		}
+
+		.hero__stats-wrapper {
+			position: relative;
+			transform: none;
+			margin-top: var(--space-10);
+		}
+
 		.hero__stats-grid {
 			grid-template-columns: repeat(2, 1fr);
 		}
 
-		.profil-grid {
-			grid-template-columns: 1fr;
-		}
-
-		.profil-card--misi {
+		.profil-sejarah, .profil-visi, .profil-misi {
+			grid-column: span 12;
 			grid-row: auto;
-			grid-column: auto;
 		}
 
 		.layanan-grid {
@@ -745,22 +770,21 @@
 			grid-template-columns: repeat(3, 1fr);
 		}
 
+		.trust-grid {
+			grid-template-columns: 1fr;
+		}
+
 		.berita-grid {
 			grid-template-columns: 1fr;
 			max-width: 500px;
 			margin: 0 auto;
 		}
-
-		.identitas-grid {
-			grid-template-columns: 1fr;
-		}
 	}
 
 	@media (max-width: 600px) {
 		.hero {
-			min-height: auto;
 			padding-top: 120px;
-			padding-bottom: var(--space-16);
+			padding-bottom: var(--space-12);
 		}
 
 		.hero__title {

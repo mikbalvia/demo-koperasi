@@ -77,7 +77,7 @@
 
 <style>
 	.stat-card {
-		background: rgba(255, 255, 255, 0.1);
+		background: rgba(41, 41, 36, 0.5); /* var(--warm-800) with opacity */
 		backdrop-filter: blur(20px);
 		-webkit-backdrop-filter: blur(20px);
 		border: 1px solid rgba(255, 255, 255, 0.15);
@@ -98,7 +98,7 @@
 	}
 
 	.stat-card:hover {
-		background: rgba(255, 255, 255, 0.18);
+		background: rgba(41, 41, 36, 0.7);
 		border-color: rgba(255, 255, 255, 0.3);
 	}
 

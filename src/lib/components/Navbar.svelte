@@ -63,7 +63,7 @@
 						{link.label}
 					</a>
 				{/each}
-				<a href="/info-pendaftaran" class="btn btn--primary navbar__cta" onclick={closeMobile}>
+				<a href="/register" class="btn btn--primary navbar__cta" onclick={closeMobile}>
 					Daftar Anggota
 				</a>
 			</div>
@@ -91,17 +91,28 @@
 		z-index: var(--z-nav);
 		padding: var(--space-4) 0;
 		transition:
-			background-color var(--transition-base),
 			padding var(--transition-base),
 			box-shadow var(--transition-base);
 	}
 
+	.navbar::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		z-index: -1;
+		background: transparent;
+		transition: background-color var(--transition-base);
+	}
+
 	.navbar.scrolled {
+		padding: var(--space-2) 0;
+		box-shadow: var(--shadow-md);
+	}
+
+	.navbar.scrolled::before {
 		background: rgba(255, 255, 255, 0.92);
 		backdrop-filter: blur(20px);
 		-webkit-backdrop-filter: blur(20px);
-		padding: var(--space-2) 0;
-		box-shadow: var(--shadow-md);
 	}
 
 	.navbar__inner {

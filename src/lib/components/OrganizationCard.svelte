@@ -16,7 +16,7 @@
 		.toUpperCase();
 </script>
 
-<div class="org-card" class:pengawas={category === 'pengawas'}>
+<div class="org-card glass" class:pengawas={category === 'pengawas'}>
 	<div class="org-card__avatar">
 		{#if person.foto}
 			<img src={person.foto} alt={person.nama} class="org-card__photo" />
@@ -32,23 +32,27 @@
 
 <style>
 	.org-card {
-		background: var(--color-surface);
-		border-radius: var(--radius-xl);
 		padding: var(--space-6);
-		border: 1px solid var(--color-border);
+		border-radius: var(--radius-xl);
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		text-align: center;
 		gap: var(--space-4);
 		transition:
-			transform var(--transition-base),
-			box-shadow var(--transition-base);
+			transform var(--transition-bouncy),
+			box-shadow var(--transition-base),
+			border-color var(--transition-base);
 	}
 
 	.org-card:hover {
-		transform: translateY(-4px);
-		box-shadow: var(--shadow-lg);
+		transform: translateY(-6px);
+		box-shadow: var(--shadow-xl);
+		border-color: var(--color-primary-light);
+	}
+
+	.pengawas:hover {
+		border-color: var(--color-secondary-light);
 	}
 
 	.org-card__avatar {

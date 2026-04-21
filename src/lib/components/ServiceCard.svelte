@@ -18,7 +18,7 @@
 	const IconComponent = $derived(iconMap[layanan.icon]);
 </script>
 
-<div class="service-card" style="--delay: {index * 100}ms">
+<div class="service-card bento-item bento-item--glow" style="--delay: {index * 100}ms">
 	<div class="service-card__icon-wrap">
 		{#if IconComponent}
 			<IconComponent size={28} strokeWidth={1.5} />
@@ -31,20 +31,19 @@
 
 <style>
 	.service-card {
-		background: var(--color-surface);
-		border-radius: var(--radius-xl);
 		padding: var(--space-8) var(--space-6);
-		border: 1px solid var(--color-border);
 		position: relative;
 		overflow: hidden;
 		transition:
-			transform var(--transition-base),
-			box-shadow var(--transition-base);
+			transform var(--transition-bouncy),
+			box-shadow var(--transition-base),
+			border-color var(--transition-base);
 	}
 
 	.service-card:hover {
-		transform: translateY(-6px);
-		box-shadow: var(--shadow-xl);
+		transform: translateY(-8px);
+		box-shadow: var(--shadow-2xl);
+		border-color: var(--color-accent-light);
 	}
 
 	.service-card__accent {
