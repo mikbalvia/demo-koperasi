@@ -2,14 +2,66 @@
 	import { onMount } from 'svelte';
 	import { Eye, EyeOff, Shield, UserCircle, Lock, ArrowRight, Info } from '@lucide/svelte';
 
+	type LoginRole = 'anggota' | 'pengurus';
+	type LoginState = { kind: 'success' | 'error'; text: string } | null;
+
 	let showPassword = $state(false);
-	let selectedRole = $state('anggota');
+	let selectedRole = $state<LoginRole>('anggota');
+	let nik = $state('');
+	let password = $state('');
+	let loading = $state(false);
+	let loginState = $state<LoginState>(null);
+	let nikError = $state('');
+	let passwordError = $state('');
 
 	const roles = [
-		{ value: 'anggota', label: 'Anggota', desc: 'Akses simpanan & pinjaman' },
-		{ value: 'pengurus', label: 'Pengurus', desc: 'Kelola operasional koperasi' },
-		{ value: 'admin', label: 'Admin', desc: 'Akses penuh sistem' }
+		{ value: 'anggota', label: 'Anggota', desc: 'Akses akun anggota' },
+		{ value: 'pengurus', label: 'Pengurus', desc: 'Akses pengurus koperasi' }
 	];
+
+	function validateLogin() {
+		nikError = '';
+		passwordError = '';
+
+		if (!/^\d{16}$/.test(nik.trim())) {
+			nikError = 'NIK harus terdiri dari 16 digit angka.';
+		}
+
+		if (!password.trim()) {
+			passwordError = 'Password wajib diisi.';
+		}
+
+		return !nikError && !passwordError;
+	}
+
+	async function handleLogin(e: SubmitEvent) {
+		e.preventDefault();
+		loginState = null;
+
+		if (!validateLogin()) {
+			return;
+		}
+
+		loading = true;
+		await new Promise((resolve) => setTimeout(resolve, 900));
+
+		const nikValue = nik.trim();
+		const isDefaultPassword = password === nikValue;
+
+		if (isDefaultPassword) {
+			loginState = {
+				kind: 'success',
+				text: `Login simulasi berhasil sebagai ${selectedRole}. Silakan lanjutkan penggantian password di dashboard.`
+			};
+		} else {
+			loginState = {
+				kind: 'error',
+				text: 'Login simulasi gagal. Untuk login pertama, gunakan NIK sebagai password.'
+			};
+		}
+
+		loading = false;
+	}
 
 	onMount(() => {
 		const observer = new IntersectionObserver(
@@ -99,7 +151,7 @@
 							type="button"
 							class="role-option"
 							class:active={selectedRole === role.value}
-							onclick={() => selectedRole = role.value}
+							onclick={() => selectedRole = role.value as LoginRole}
 							id="role-{role.value}"
 						>
 							<span class="role-option__label">{role.label}</span>
@@ -108,24 +160,44 @@
 					{/each}
 				</div>
 
-				<form class="login-form" id="login-form">
+				<form class="login-form" id="login-form" onsubmit={handleLogin} novalidate>
 					<div class="form-group">
-						<label for="login_nik" class="form-label">NIK / Username</label>
+						<label for="login_nik" class="form-label">NIK (Nomor Induk Kependudukan)</label>
 						<div class="login-input-wrap">
 							<span class="login-input-icon"><UserCircle size={18} strokeWidth={1.5} /></span>
-							<input type="text" id="login_nik" name="nik" class="form-input login-input" placeholder="Masukkan NIK atau username" required />
+							<input
+								type="text"
+								id="login_nik"
+								name="nik"
+								class="form-input login-input"
+								placeholder="Masukkan 16 digit NIK"
+								bind:value={nik}
+								inputmode="numeric"
+								maxlength="16"
+								required
+							/>
 						</div>
+						{#if nikError}<p class="form-error">{nikError}</p>{/if}
 					</div>
 
 					<div class="form-group">
 						<label for="login_password" class="form-label">Password</label>
 						<div class="login-input-wrap">
 							<span class="login-input-icon"><Lock size={18} strokeWidth={1.5} /></span>
-							<input type={showPassword ? 'text' : 'password'} id="login_password" name="password" class="form-input login-input" placeholder="Masukkan password" required />
+							<input
+								type={showPassword ? 'text' : 'password'}
+								id="login_password"
+								name="password"
+								class="form-input login-input"
+								placeholder="Masukkan password"
+								bind:value={password}
+								required
+							/>
 							<button type="button" class="login-input-toggle" onclick={() => showPassword = !showPassword}>
 								{#if showPassword}<EyeOff size={18} strokeWidth={1.5} />{:else}<Eye size={18} strokeWidth={1.5} />{/if}
 							</button>
 						</div>
+						{#if passwordError}<p class="form-error">{passwordError}</p>{/if}
 					</div>
 
 					<div class="login-options">
@@ -133,9 +205,13 @@
 					</div>
 
 					<button type="submit" class="btn btn--primary btn--lg login-submit" id="login-submit">
-						Masuk
+						{#if loading}Memproses...{:else}Masuk Sekarang{/if}
 						<ArrowRight size={18} strokeWidth={2} />
 					</button>
+
+					{#if loginState}
+						<p class="form-alert" class:form-alert--success={loginState.kind === 'success'} class:form-alert--error={loginState.kind === 'error'}>{loginState.text}</p>
+					{/if}
 				</form>
 
 				<div class="login-hint">
@@ -320,7 +396,7 @@
 	/* Role Selector */
 	.role-selector {
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(2, 1fr);
 		gap: var(--space-2);
 		margin-bottom: var(--space-6);
 	}
@@ -406,6 +482,32 @@
 		color: var(--color-text-muted);
 	}
 
+	.form-error {
+		margin-top: var(--space-2);
+		font-size: var(--text-xs);
+		color: var(--red-600);
+	}
+
+	.form-alert {
+		margin-top: var(--space-2);
+		padding: var(--space-3);
+		border-radius: var(--radius-lg);
+		font-size: var(--text-xs);
+		line-height: 1.5;
+	}
+
+	.form-alert--success {
+		background: var(--green-50);
+		border: 1px solid var(--green-200);
+		color: var(--green-800);
+	}
+
+	.form-alert--error {
+		background: var(--red-50);
+		border: 1px solid var(--red-200);
+		color: var(--red-700);
+	}
+
 	.login-input-wrap {
 		position: relative;
 	}
@@ -463,6 +565,11 @@
 	.login-submit {
 		width: 100%;
 		margin-top: var(--space-2);
+	}
+
+	.login-submit:disabled {
+		opacity: 0.75;
+		cursor: not-allowed;
 	}
 
 	/* Hint */

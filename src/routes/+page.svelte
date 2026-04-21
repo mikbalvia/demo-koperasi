@@ -11,6 +11,10 @@
 
 	let heroVisible = $state(false);
 
+	const beritaTerbaru = [...berita]
+		.sort((a, b) => new Date(b.tanggal).getTime() - new Date(a.tanggal).getTime())
+		.slice(0, 4);
+
 	onMount(() => {
 		heroVisible = true;
 
@@ -182,6 +186,33 @@
 					<OrganizationCard {person} category="pengurus" />
 				{/each}
 			</div>
+		</div>
+	</div>
+</section>
+
+<!-- ===== BERITA ===== -->
+<section class="section section--alt" id="berita-home">
+	<div class="container">
+		<div class="animate-on-scroll">
+			<SectionHeading
+				title="Berita Terbaru"
+				subtitle="Ikuti kabar terbaru kegiatan, program, dan perkembangan koperasi untuk menambah konteks informasi anggota."
+			/>
+		</div>
+
+		<div class="berita-grid">
+			{#each beritaTerbaru as item, i}
+				<div class="animate-on-scroll delay-{i + 1}">
+					<NewsCard berita={item} />
+				</div>
+			{/each}
+		</div>
+
+		<div class="berita-more animate-on-scroll">
+			<a href="/berita" class="btn btn--outline btn--lg">
+				Lihat Semua Berita
+				<ArrowRight size={18} strokeWidth={2} />
+			</a>
 		</div>
 	</div>
 </section>
@@ -677,7 +708,7 @@
 	/* ===== BERITA ===== */
 	.berita-grid {
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(4, minmax(0, 1fr));
 		gap: var(--space-6);
 	}
 
@@ -762,6 +793,10 @@
 			gap: var(--space-4);
 		}
 
+		.berita-grid {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+		}
+
 		.org-grid--5 {
 			grid-template-columns: repeat(4, 1fr);
 		}
@@ -770,14 +805,15 @@
 	@media (max-width: 960px) {
 		.hero {
 			min-height: auto;
-			padding-bottom: var(--space-16);
+			padding-top: 112px;
+			padding-bottom: var(--space-12);
 			margin-bottom: 0;
 		}
 
 		.hero__stats-wrapper {
 			position: relative;
 			transform: none;
-			margin-top: var(--space-10);
+			margin-top: var(--space-8);
 		}
 
 		.hero__stats-grid {
@@ -818,13 +854,26 @@
 
 	@media (max-width: 768px) {
 		.hero {
-			padding-top: 120px;
-			padding-bottom: var(--space-12);
+			padding-top: 104px;
+			padding-bottom: var(--space-10);
+		}
+
+		.hero__badge {
+			margin-bottom: var(--space-4);
+		}
+
+		.hero__title {
+			margin-bottom: var(--space-4);
 		}
 
 		.hero__subtitle {
 			font-size: var(--text-base);
 			max-width: 520px;
+			margin-bottom: var(--space-6);
+		}
+
+		.hero__stats-wrapper {
+			margin-top: var(--space-6);
 		}
 
 		.hero__actions,
@@ -869,9 +918,29 @@
 	}
 
 	@media (max-width: 600px) {
+		.hero {
+			padding-top: 92px;
+			padding-bottom: var(--space-8);
+		}
+
+		.hero__title {
+			font-size: var(--text-5xl);
+			line-height: 1.08;
+		}
+
+		.hero__subtitle {
+			font-size: var(--text-sm);
+			line-height: 1.55;
+			margin-bottom: var(--space-5);
+		}
+
+		.hero__stats-wrapper {
+			margin-top: var(--space-5);
+		}
+
 		.hero__stats-grid {
 			grid-template-columns: repeat(2, minmax(0, 1fr));
-			gap: var(--space-3);
+			gap: var(--space-2);
 		}
 
 		.bento-content {
@@ -893,17 +962,27 @@
 			font-size: var(--text-base);
 			letter-spacing: 0.04em;
 		}
+
+		.berita-grid {
+			grid-template-columns: 1fr;
+		}
 	}
 
 	@media (max-width: 420px) {
+		.hero {
+			padding-top: 84px;
+		}
+
+		.hero__stats-grid {
+			max-width: 100%;
+		}
+	}
+
+	@media (max-width: 360px) {
 		.hero__stats-grid {
 			grid-template-columns: 1fr;
 			max-width: 280px;
 			margin: 0 auto;
-		}
-
-		.hero {
-			padding-top: 110px;
 		}
 	}
 

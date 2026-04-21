@@ -131,27 +131,49 @@
 
 	@media (max-width: 600px) {
 		.stat-card {
-			padding: var(--space-5) var(--space-4);
+			padding: var(--space-4) var(--space-3);
+			border-radius: var(--radius-lg);
 		}
 
 		.stat-card__icon {
-			width: 48px;
-			height: 48px;
+			width: 42px;
+			height: 42px;
 			margin-bottom: var(--space-2);
 		}
 
+		.stat-card__icon :global(svg) {
+			width: 22px;
+			height: 22px;
+		}
+
 		.stat-card__value {
-			font-size: var(--text-3xl);
+			font-size: clamp(1.2rem, 4.5vw, 1.6rem);
+			white-space: nowrap;
 		}
 
 		.stat-card__label {
-			font-size: var(--text-xs);
+			font-size: 0.7rem;
+			line-height: 1.3;
 		}
 	}
 
 	@media (max-width: 420px) {
+		.stat-card {
+			padding: var(--space-3);
+		}
+
+		.stat-card__icon {
+			width: 38px;
+			height: 38px;
+		}
+
+		.stat-card__icon :global(svg) {
+			width: 20px;
+			height: 20px;
+		}
+
 		.stat-card__value {
-			font-size: var(--text-2xl);
+			font-size: clamp(1.05rem, 4.2vw, 1.35rem);
 		}
 	}
 </style>
