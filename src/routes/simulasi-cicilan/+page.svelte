@@ -98,7 +98,7 @@
 </script>
 
 <svelte:head>
-	<title>Simulasi Cicilan — KKMP Awirarangan</title>
+	<title>Simulasi Cicilan — KKMP Karang Tengah</title>
 	<meta name="description" content="Simulasi dan kalkulator cicilan pinjaman koperasi. Hitung estimasi angsuran bulanan dengan berbagai parameter." />
 </svelte:head>
 
@@ -314,8 +314,10 @@
 	.page-header__title { font-size: var(--text-5xl); color: white; margin: var(--space-4) 0; }
 	.page-header__subtitle { font-size: var(--text-lg); color: rgba(255,255,255,0.7); max-width: 500px; margin: 0 auto; }
 
-	.sim-layout { display: grid; grid-template-columns: 380px 1fr; gap: var(--space-8); align-items: start; }
+	.sim-layout { display: grid; grid-template-columns: 380px minmax(0, 1fr); gap: var(--space-8); align-items: start; }
+	.sim-layout > * { min-width: 0; }
 	.sim-input { position: sticky; top: 100px; }
+	.sim-result { min-width: 0; }
 	.sim-input__header { display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-6); }
 	.sim-input__title { font-family: var(--font-body); font-size: var(--text-lg); font-weight: 700; }
 
@@ -334,7 +336,7 @@
 	.field__select-wrap { position: relative; }
 	.field__select { width: 100%; padding: var(--space-3) var(--space-4); font-size: var(--text-sm); font-family: var(--font-body); font-weight: 600; border: 1.5px solid var(--color-border); border-radius: var(--radius-lg); background: var(--color-surface); color: var(--color-text); appearance: none; -webkit-appearance: none; cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23737368' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; padding-right: var(--space-10); transition: border-color var(--transition-fast); }
 	.field__select:focus { outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(185,28,28,0.1); }
-	.field__hint { display: flex; align-items: center; gap: var(--space-1); font-size: var(--text-xs); color: var(--color-text-muted); margin-top: var(--space-2); }
+	.field__hint { display: flex; align-items: flex-start; gap: var(--space-1); font-size: var(--text-xs); color: var(--color-text-muted); margin-top: var(--space-2); flex-wrap: wrap; }
 
 	/* Advanced toggle */
 	.advanced-toggle { border-top: 1px solid var(--color-border); margin-top: var(--space-4); padding-top: var(--space-4); }
@@ -362,14 +364,15 @@
 	.sim-breakdown { background: var(--warm-50); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-5); margin-bottom: var(--space-6); }
 	.sim-breakdown__title { font-family: var(--font-body); font-size: var(--text-sm); font-weight: 700; margin-bottom: var(--space-3); color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: 0.04em; }
 	.sim-breakdown__grid { display: flex; flex-direction: column; gap: var(--space-2); }
-	.sim-breakdown__row { display: flex; justify-content: space-between; align-items: center; font-size: var(--text-sm); color: var(--color-text-secondary); padding: var(--space-2) 0; border-bottom: 1px dashed var(--warm-200); }
+	.sim-breakdown__row { display: flex; justify-content: space-between; align-items: center; gap: var(--space-3); font-size: var(--text-sm); color: var(--color-text-secondary); padding: var(--space-2) 0; border-bottom: 1px dashed var(--warm-200); }
 	.sim-breakdown__row:last-child { border-bottom: none; }
 	.sim-breakdown__row--highlight { background: var(--green-50); margin: var(--space-1) calc(-1 * var(--space-3)); padding: var(--space-2) var(--space-3); border-radius: var(--radius-sm); border-bottom: none; }
 	.sim-breakdown__row--total { background: var(--red-50); margin: var(--space-1) calc(-1 * var(--space-3)); padding: var(--space-2) var(--space-3); border-radius: var(--radius-sm); border-bottom: none; color: var(--color-primary); font-weight: 600; }
 	.sim-breakdown__val { font-weight: 600; font-family: var(--font-body); }
 	.sim-breakdown__val--bold { font-weight: 700; color: var(--color-text); }
 
-	.sim-table-wrap { overflow-x: auto; border: 1px solid var(--color-border); border-radius: var(--radius-lg); }
+	.sim-table-wrap { width: 100%; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1px solid var(--color-border); border-radius: var(--radius-lg); }
+	.sim-table-wrap::-webkit-scrollbar { height: 8px; }
 	.sim-table { width: 100%; border-collapse: collapse; font-size: var(--text-sm); }
 	.sim-table th { background: var(--color-bg-alt); padding: var(--space-3) var(--space-4); text-align: left; font-weight: 600; font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-secondary); border-bottom: 1px solid var(--color-border); white-space: nowrap; }
 	.sim-table td { padding: var(--space-3) var(--space-4); border-bottom: 1px solid var(--color-border); white-space: nowrap; color: var(--color-text-secondary); }
@@ -403,6 +406,10 @@
 			padding: 116px 0 var(--space-12);
 		}
 
+		.page-header__title {
+			font-size: clamp(2rem, 8vw, var(--text-4xl));
+		}
+
 		.page-header__subtitle {
 			font-size: var(--text-base);
 		}
@@ -418,9 +425,22 @@
 		}
 	}
 
-	@media (max-width: 480px) {
-		.sim-summary { grid-template-columns: 1fr; }
+	@media (max-width: 640px) {
+		.sim-summary {
+			grid-template-columns: 1fr;
+		}
 
+		.sim-breakdown__row {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		.sim-breakdown__val {
+			word-break: break-word;
+		}
+	}
+
+	@media (max-width: 480px) {
 		.sim-input {
 			padding: var(--space-5);
 		}

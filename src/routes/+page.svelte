@@ -38,10 +38,10 @@
 </script>
 
 <svelte:head>
-	<title>Koperasi Kelurahan Merah Putih Awirarangan</title>
+	<title>Koperasi Kelurahan Merah Putih Karang Tengah</title>
 	<meta
 		name="description"
-		content="Koperasi Kelurahan Merah Putih Awirarangan — Membangun Ekonomi Kerakyatan Berbasis Gotong Royong"
+		content="Koperasi Kelurahan Merah Putih Karang Tengah — Membangun Ekonomi Kerakyatan Berbasis Gotong Royong"
 	/>
 </svelte:head>
 
@@ -65,10 +65,10 @@
 		<h1 class="hero__title">
 			Koperasi Kelurahan<br />
 			<span class="hero__title-accent">Merah Putih</span><br />
-			Awirarangan
+			Karang Tengah
 		</h1>
 		<p class="hero__subtitle">
-			Membangun Ekonomi Kerakyatan Berbasis Gotong Royong untuk Kesejahteraan Anggota dan Masyarakat Kelurahan Awirarangan
+			Membangun Ekonomi Kerakyatan Berbasis Gotong Royong untuk Kesejahteraan Anggota dan Masyarakat Kelurahan Karang Tengah
 		</p>
 		<div class="hero__actions">
 			<a href="/register" class="btn btn--primary btn--lg">
@@ -96,7 +96,7 @@
 <section class="section pattern-bg" id="profil">
 	<div class="container">
 		<div class="animate-on-scroll">
-			<SectionHeading title="Profil Koperasi" subtitle="Visi, Misi, dan Sejarah singkat Koperasi Kelurahan Merah Putih Awirarangan." />
+			<SectionHeading title="Profil Koperasi" subtitle="Visi, Misi, dan Sejarah singkat Koperasi Kelurahan Merah Putih Karang Tengah." />
 		</div>
 
 		<div class="bento-grid profil-bento">
@@ -106,10 +106,13 @@
 					<img src="/images/about-koperasi.png" alt="Toko Koperasi" loading="lazy" />
 					<div class="bento-image-overlay"></div>
 				</div>
-				<div class="bento-content">
+				<div class="bento-content profil-sejarah__content">
 					<div class="profil-card__icon-wrap glass"><BookOpen size={24} strokeWidth={1.5} /></div>
-					<h3 class="profil-card__title text-white">Sejarah Singkat</h3>
-					<p class="profil-card__text text-white-70">{profil.sejarah}</p>
+					<div class="profil-card__story">
+						<span class="profil-card__eyebrow text-white-70">Tentang koperasi</span>
+						<h3 class="profil-card__title text-white">Sejarah Singkat</h3>
+						<p class="profil-card__text text-white-70">{profil.sejarah}</p>
+					</div>
 				</div>
 			</div>
 
@@ -224,7 +227,7 @@
 		<div class="animate-on-scroll">
 			<SectionHeading
 				title="Kepercayaan & Legalitas"
-				subtitle="Informasi resmi badan hukum dan dokumen legalitas Koperasi Kelurahan Merah Putih Awirarangan."
+				subtitle="Informasi resmi badan hukum dan dokumen legalitas Koperasi Kelurahan Merah Putih Karang Tengah."
 				light
 			/>
 		</div>
@@ -490,7 +493,9 @@
 	.bento-image-overlay {
 		position: absolute;
 		inset: 0;
-		background: linear-gradient(to top, rgba(26, 26, 22, 0.95) 0%, rgba(26, 26, 22, 0.5) 50%, transparent 100%);
+		background:
+			linear-gradient(180deg, rgba(26, 26, 22, 0.16) 0%, rgba(26, 26, 22, 0.42) 44%, rgba(26, 26, 22, 0.95) 100%),
+			radial-gradient(circle at top left, rgba(184, 28, 28, 0.24), transparent 44%);
 	}
 
 	.bento-content {
@@ -499,8 +504,37 @@
 		padding: var(--space-8);
 	}
 
+	.profil-sejarah__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		gap: var(--space-4);
+		height: 100%;
+	}
+
+	.profil-card__story {
+		max-width: 34rem;
+		padding: var(--space-5);
+		border-radius: calc(var(--radius-xl) + 2px);
+		background: linear-gradient(180deg, rgba(26, 26, 22, 0.34), rgba(26, 26, 22, 0.68));
+		border: 1px solid rgba(255, 255, 255, 0.14);
+		backdrop-filter: blur(10px);
+		-webkit-backdrop-filter: blur(10px);
+		box-shadow: 0 18px 48px rgba(26, 26, 22, 0.18);
+	}
+
+	.profil-card__eyebrow {
+		display: inline-flex;
+		align-items: center;
+		font-size: var(--text-xs);
+		font-weight: 700;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		margin-bottom: var(--space-2);
+	}
+
 	.text-white { color: white !important; }
-	.text-white-70 { color: rgba(255, 255, 255, 0.75) !important; }
+	.text-white-70 { color: rgba(255, 255, 255, 0.78) !important; }
 
 	.profil-card__icon-wrap {
 		width: 52px;
@@ -889,6 +923,46 @@
 			width: 100%;
 		}
 
+		.profil-sejarah {
+			min-height: unset;
+			display: grid;
+			grid-template-rows: minmax(220px, 44vw) auto;
+		}
+
+		.profil-sejarah .bento-image-bg {
+			position: relative;
+			min-height: 220px;
+		}
+
+		.profil-sejarah .bento-content {
+			padding: var(--space-5);
+			background: linear-gradient(180deg, rgba(255, 252, 246, 0.98), rgba(255, 248, 240, 0.96));
+		}
+
+		.profil-sejarah .profil-card__icon-wrap {
+			margin-bottom: 0;
+		}
+
+		.profil-sejarah .profil-card__story {
+			max-width: none;
+			padding: 0;
+			background: transparent;
+			border: 0;
+			box-shadow: none;
+			backdrop-filter: none;
+			-webkit-backdrop-filter: none;
+		}
+
+		.profil-sejarah .profil-card__eyebrow,
+		.profil-sejarah .profil-card__title,
+		.profil-sejarah .profil-card__text {
+			color: var(--color-text) !important;
+		}
+
+		.profil-sejarah .profil-card__text {
+			color: var(--color-text-secondary) !important;
+		}
+
 		.profil-visi,
 		.profil-misi {
 			grid-column: span 12;
@@ -948,7 +1022,16 @@
 		}
 
 		.profil-sejarah {
-			min-height: 380px;
+			grid-template-rows: minmax(200px, 48vw) auto;
+			border-radius: calc(var(--radius-2xl) - 2px);
+		}
+
+		.profil-sejarah .bento-content {
+			padding: var(--space-5);
+		}
+
+		.profil-sejarah .bento-image-bg {
+			min-height: 200px;
 		}
 
 		.org-grid--3,

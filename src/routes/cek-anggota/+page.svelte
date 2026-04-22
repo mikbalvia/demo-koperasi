@@ -25,7 +25,7 @@
 </script>
 
 <svelte:head>
-	<title>Cek Status Anggota — KKMP Awirarangan</title>
+	<title>Cek Status Anggota — KKMP Karang Tengah</title>
 </svelte:head>
 
 <section class="page-header">

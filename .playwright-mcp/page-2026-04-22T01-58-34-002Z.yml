@@ -1,13 +1,13 @@
 - generic [ref=e3]:
   - navigation [ref=e4]:
     - generic [ref=e5]:
-      - link "KKMP Awirarangan" [ref=e6] [cursor=pointer]:
+      - link "KKMP Karang Tengah" [ref=e6] [cursor=pointer]:
         - /url: /
         - img [ref=e8]:
           - generic [ref=e10]: K
         - generic [ref=e11]:
           - generic [ref=e12]: KKMP
-          - generic [ref=e13]: Awirarangan
+          - generic [ref=e13]: Karang Tengah
       - generic [ref=e15]:
         - link "Profil" [ref=e16] [cursor=pointer]:
           - /url: /#profil
@@ -31,7 +31,7 @@
         - img [ref=e29]
         - text: Warta Koperasi
       - heading "Berita & Informasi" [level=1] [ref=e32]
-      - paragraph [ref=e33]: Ikuti kegiatan dan pengumuman terbaru dari Koperasi Merah Putih Awirarangan.
+      - paragraph [ref=e33]: Ikuti kegiatan dan pengumuman terbaru dari Koperasi Merah Putih Karang Tengah.
     - generic [ref=e35]:
       - generic [ref=e36]:
         - button "Semua" [ref=e37] [cursor=pointer]
@@ -64,7 +64,7 @@
                 - img [ref=e68]
                 - time [ref=e70]: 20 Februari 2026
             - heading "Program Sembako Murah untuk Warga Kelurahan" [level=3] [ref=e71]
-            - paragraph [ref=e72]: Koperasi berhasil menjalankan program sembako murah yang berdampak langsung pada 500 keluarga di Kelurahan Awirarangan.
+            - paragraph [ref=e72]: Koperasi berhasil menjalankan program sembako murah yang berdampak langsung pada 500 keluarga di Kelurahan Karang Tengah.
             - link "Baca Selengkapnya" [ref=e73] [cursor=pointer]:
               - /url: /berita/program-sembako-murah
               - text: Baca Selengkapnya
@@ -92,21 +92,21 @@
                 - img [ref=e100]
                 - time [ref=e102]: 5 Desember 2025
             - heading "Penandatanganan MoU dengan Pemda Kabupaten Kuningan" [level=3] [ref=e103]
-            - paragraph [ref=e104]: KKMP Awirarangan resmi menandatangani nota kesepahaman dengan Pemerintah Kabupaten Kuningan untuk pengembangan ekonomi desa.
+            - paragraph [ref=e104]: KKMP Karang Tengah resmi menandatangani nota kesepahaman dengan Pemerintah Kabupaten Kuningan untuk pengembangan ekonomi desa.
             - link "Baca Selengkapnya" [ref=e105] [cursor=pointer]:
               - /url: /berita/kerjasama-pemda
               - text: Baca Selengkapnya
               - img [ref=e106]
         - article [ref=e109]:
-          - img "Peluncuran Produk AMDK \"Awirarangan Fresh\"" [ref=e111]
+          - img "Peluncuran Produk AMDK \"Karang Tengah Fresh\"" [ref=e111]
           - generic [ref=e112]:
             - generic [ref=e113]:
               - generic [ref=e114]: Usaha
               - generic [ref=e115]:
                 - img [ref=e116]
                 - time [ref=e118]: 18 November 2025
-            - heading "Peluncuran Produk AMDK \"Awirarangan Fresh\"" [level=3] [ref=e119]
-            - paragraph [ref=e120]: Unit usaha AMDK koperasi resmi meluncurkan brand baru "Awirarangan Fresh" dengan kemasan modern dan kualitas terjamin.
+            - heading "Peluncuran Produk AMDK \"Karang Tengah Fresh\"" [level=3] [ref=e119]
+            - paragraph [ref=e120]: Unit usaha AMDK koperasi resmi meluncurkan brand baru "Karang Tengah Fresh" dengan kemasan modern dan kualitas terjamin.
             - link "Baca Selengkapnya" [ref=e121] [cursor=pointer]:
               - /url: /berita/launching-amdk
               - text: Baca Selengkapnya
@@ -120,7 +120,7 @@
                 - img [ref=e132]
                 - time [ref=e134]: 12 Juli 2025
             - heading "Bakti Sosial Hari Koperasi Nasional" [level=3] [ref=e135]
-            - paragraph [ref=e136]: Memperingati Hari Koperasi Nasional, KKMP Awirarangan menggelar bakti sosial berupa pembagian 300 paket sembako gratis.
+            - paragraph [ref=e136]: Memperingati Hari Koperasi Nasional, KKMP Karang Tengah menggelar bakti sosial berupa pembagian 300 paket sembako gratis.
             - link "Baca Selengkapnya" [ref=e137] [cursor=pointer]:
               - /url: /berita/bakti-sosial
               - text: Baca Selengkapnya
@@ -132,8 +132,8 @@
           - generic [ref=e144]:
             - img [ref=e145]:
               - generic [ref=e147]: K
-            - generic [ref=e148]: KKMP Awirarangan
-          - paragraph [ref=e149]: Membangun ekonomi kerakyatan berbasis gotong royong untuk kesejahteraan anggota dan masyarakat Kelurahan Awirarangan.
+            - generic [ref=e148]: KKMP Karang Tengah
+          - paragraph [ref=e149]: Membangun ekonomi kerakyatan berbasis gotong royong untuk kesejahteraan anggota dan masyarakat Kelurahan Karang Tengah.
           - generic [ref=e151]:
             - img [ref=e152]
             - text: Program Pemerintah
@@ -177,17 +177,17 @@
           - list [ref=e185]:
             - listitem [ref=e186]:
               - img [ref=e187]
-              - generic [ref=e190]: Jl. Jendral Sudirman, RT 006 RW 003, Kel. Awirarangan, Kec. Kuningan, Kab. Kuningan, Jawa Barat, 45511
+              - generic [ref=e190]: Jl. Jendral Sudirman, RT 006 RW 003, Kel. Karang Tengah, Kec. Kuningan, Kab. Kuningan, Jawa Barat, 45511
             - listitem [ref=e191]:
               - img [ref=e192]
-              - link "koprasimerput.awirarangan@gmail.com" [ref=e195] [cursor=pointer]:
-                - /url: mailto:koprasimerput.awirarangan@gmail.com
+              - link "koprasimerput.karangtengah@gmail.com" [ref=e195] [cursor=pointer]:
+                - /url: mailto:koprasimerput.karangtengah@gmail.com
             - listitem [ref=e196]:
               - img [ref=e197]
               - link "merahputih.kop.id" [ref=e200] [cursor=pointer]:
                 - /url: https://merahputih.kop.id/
       - generic [ref=e202]:
-        - paragraph [ref=e203]: © 2026 Koperasi Kelurahan Merah Putih Awirarangan. Semua Hak Cipta Dilindungi.
+        - paragraph [ref=e203]: © 2026 Koperasi Kelurahan Merah Putih Karang Tengah. Semua Hak Cipta Dilindungi.
         - paragraph [ref=e204]:
           - text: Bagian dari program
           - link "Kementerian Koperasi Republik Indonesia" [ref=e205] [cursor=pointer]:

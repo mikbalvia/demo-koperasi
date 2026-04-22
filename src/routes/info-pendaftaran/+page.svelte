@@ -25,8 +25,8 @@
 </script>
 
 <svelte:head>
-	<title>Info Pendaftaran — KKMP Awirarangan</title>
-	<meta name="description" content="Informasi lengkap pendaftaran anggota Koperasi Kelurahan Merah Putih Awirarangan." />
+	<title>Info Pendaftaran — KKMP Karang Tengah</title>
+	<meta name="description" content="Informasi lengkap pendaftaran anggota Koperasi Kelurahan Merah Putih Karang Tengah." />
 </svelte:head>
 
 <!-- Header -->

@@ -78,8 +78,8 @@
 </script>
 
 <svelte:head>
-	<title>Login — KKMP Awirarangan</title>
-	<meta name="description" content="Masuk ke dashboard Koperasi Kelurahan Merah Putih Awirarangan." />
+	<title>Login — KKMP Karang Tengah</title>
+	<meta name="description" content="Masuk ke dashboard Koperasi Kelurahan Merah Putih Karang Tengah." />
 </svelte:head>
 
 <section class="login-page">

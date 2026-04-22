@@ -1,16 +1,16 @@
 import type { ProfilKoperasi, Pengurus, Statistik, Layanan, Berita, DokumenLegalitas, FAQItem } from '$lib/types';
 
 export const profil: ProfilKoperasi = {
-	namaResmi: 'Koperasi Kelurahan Merah Putih Awirarangan',
-	namasingkat: 'KKMP Awirarangan',
+	namaResmi: 'Koperasi Kelurahan Merah Putih Karang Tengah',
+	namasingkat: 'KKMP Karang Tengah',
 	bentukUsaha: 'Koperasi Konsumen',
 	jenisKoperasi: 'Koperasi Serba Usaha (Sembako, AMDK, Jasa Keuangan, dll)',
 	nik: '3208130020160',
 	alamat:
-		'Jl. Jendral Sudirman, RT 006 RW 003, Kel. Awirarangan, Kec. Kuningan, Kab. Kuningan, Jawa Barat, 45511',
-	email: 'koprasimerput.awirarangan@gmail.com',
+		'Jl. Raden Saleh Karang Tengah Kota Tangerang - Banten',
+	email: 'koprasimerput.karangtengah@gmail.com',
 	website: 'https://merahputih.kop.id/',
-	visi: 'Menjadi koperasi yang mandiri, modern, dan terpercaya dalam meningkatkan kesejahteraan anggota dan masyarakat Kelurahan Awirarangan.',
+	visi: 'Menjadi koperasi yang mandiri, modern, dan terpercaya dalam meningkatkan kesejahteraan anggota dan masyarakat Kelurahan Karang Tengah.',
 	misi: [
 		'Menyediakan kebutuhan pokok dan layanan berkualitas dengan harga terjangkau.',
 		'Mengembangkan unit usaha yang produktif dan inovatif.',
@@ -18,21 +18,21 @@ export const profil: ProfilKoperasi = {
 		'Memberikan layanan keuangan yang mudah diakses dan bermanfaat bagi anggota.'
 	],
 	sejarah:
-		'Koperasi Kelurahan Merah Putih Awirarangan didirikan atas inisiatif dan semangat gotong royong warga untuk membangun kekuatan ekonomi bersama. Berawal dari unit usaha kecil yang menyediakan kebutuhan sehari-hari, kini koperasi telah berkembang dengan berbagai layanan untuk memenuhi kebutuhan anggota, mulai dari sembako, air minum dalam kemasan (AMDK), hingga layanan jasa keuangan sederhana. Kami berkomitmen untuk terus tumbuh dan memberikan manfaat sebesar-besarnya bagi seluruh anggota.'
+		'Koperasi Kelurahan Merah Putih Karang Tengah didirikan atas inisiatif dan semangat gotong royong warga untuk membangun kekuatan ekonomi bersama. Berawal dari unit usaha kecil yang menyediakan kebutuhan sehari-hari, kini koperasi telah berkembang dengan berbagai layanan untuk memenuhi kebutuhan anggota, mulai dari sembako, air minum dalam kemasan (AMDK), hingga layanan jasa keuangan sederhana. Kami berkomitmen untuk terus tumbuh dan memberikan manfaat sebesar-besarnya bagi seluruh anggota.'
 };
 
 export const pengawas: Pengurus[] = [
-	{ nama: 'Lurah Awirarangan', jabatan: 'Koordinator Pengawas' },
-	{ nama: 'Drs. H. Djodjo Soedirdja, M.Si', jabatan: 'Anggota Pengawas' },
-	{ nama: 'Drs. H. Mamat Rohmansyah, M.Si', jabatan: 'Anggota Pengawas' }
+	{ nama: 'M. Syarujih SIP', jabatan: 'Koordinator Pengawas' },
+	{ nama: 'Ahmad Luthfi SKom. MM', jabatan: 'Anggota Pengawas' },
+	{ nama: 'Ahmad Luthfi SKom. MM', jabatan: 'Anggota Pengawas' }
 ];
 
 export const pengurus: Pengurus[] = [
-	{ nama: 'H. Abid Zaenal Abidin, SE', jabatan: 'Ketua' },
-	{ nama: 'Cicih', jabatan: 'Wakil Ketua Usaha' },
-	{ nama: 'Dadi Darmanto', jabatan: 'Wakil Ketua Anggota' },
-	{ nama: 'Enda Suhenda Wijaya', jabatan: 'Sekretaris' },
-	{ nama: 'Miftah Faridl, S.Sos', jabatan: 'Bendahara' }
+	{ nama: 'M. Yunus Lazuardi', jabatan: 'Ketua' },
+	{ nama: 'Ahmad Luthfi SKom. MM', jabatan: 'Wakil Ketua Usaha' },
+	{ nama: 'Ahmad Luthfi SKom. MM', jabatan: 'Wakil Ketua Anggota' },
+	{ nama: 'Ahmad Luthfi SKom. MM', jabatan: 'Sekretaris' },
+	{ nama: 'Ahmad Luthfi SKom. MM', jabatan: 'Bendahara' }
 ];
 
 export const statistik: Statistik[] = [
@@ -77,7 +77,7 @@ export const berita: Berita[] = [
 		id: 'program-sembako-murah',
 		judul: 'Program Sembako Murah untuk Warga Kelurahan',
 		ringkasan:
-			'Koperasi berhasil menjalankan program sembako murah yang berdampak langsung pada 500 keluarga di Kelurahan Awirarangan.',
+			'Koperasi berhasil menjalankan program sembako murah yang berdampak langsung pada 500 keluarga di Kelurahan Karang Tengah.',
 		tanggal: '2026-02-20',
 		kategori: 'Program',
 		thumbnail: '/images/news-sembako.png'
@@ -95,16 +95,16 @@ export const berita: Berita[] = [
 		id: 'kerjasama-pemda',
 		judul: 'Penandatanganan MoU dengan Pemda Kabupaten Kuningan',
 		ringkasan:
-			'KKMP Awirarangan resmi menandatangani nota kesepahaman dengan Pemerintah Kabupaten Kuningan untuk pengembangan ekonomi desa.',
+			'KKMP Karang Tengah resmi menandatangani nota kesepahaman dengan Pemerintah Kabupaten Kuningan untuk pengembangan ekonomi desa.',
 		tanggal: '2025-12-05',
 		kategori: 'Kerjasama',
 		thumbnail: '/images/news-kerjasama.png'
 	},
 	{
 		id: 'launching-amdk',
-		judul: 'Peluncuran Produk AMDK "Awirarangan Fresh"',
+		judul: 'Peluncuran Produk AMDK "Karang Tengah Fresh"',
 		ringkasan:
-			'Unit usaha AMDK koperasi resmi meluncurkan brand baru "Awirarangan Fresh" dengan kemasan modern dan kualitas terjamin.',
+			'Unit usaha AMDK koperasi resmi meluncurkan brand baru "Karang Tengah Fresh" dengan kemasan modern dan kualitas terjamin.',
 		tanggal: '2025-11-18',
 		kategori: 'Usaha',
 		thumbnail: '/images/news-amdk.png'
@@ -113,7 +113,7 @@ export const berita: Berita[] = [
 		id: 'bakti-sosial',
 		judul: 'Bakti Sosial Hari Koperasi Nasional',
 		ringkasan:
-			'Memperingati Hari Koperasi Nasional, KKMP Awirarangan menggelar bakti sosial berupa pembagian 300 paket sembako gratis.',
+			'Memperingati Hari Koperasi Nasional, KKMP Karang Tengah menggelar bakti sosial berupa pembagian 300 paket sembako gratis.',
 		tanggal: '2025-07-12',
 		kategori: 'Kegiatan',
 		thumbnail: '/images/news-baksos.png'
@@ -146,7 +146,7 @@ export const faqItems: FAQItem[] = [
 	{
 		pertanyaan: 'Siapa saja yang bisa menjadi anggota koperasi?',
 		jawaban:
-			'Setiap warga Kelurahan Awirarangan yang berusia minimal 17 tahun atau sudah menikah, memiliki KTP dan berdomisili di wilayah kelurahan dapat mendaftar menjadi anggota koperasi.'
+			'Setiap warga Kelurahan Karang Tengah yang berusia minimal 17 tahun atau sudah menikah, memiliki KTP dan berdomisili di wilayah kelurahan dapat mendaftar menjadi anggota koperasi.'
 	},
 	{
 		pertanyaan: 'Berapa biaya pendaftaran menjadi anggota?',
@@ -166,12 +166,12 @@ export const faqItems: FAQItem[] = [
 	{
 		pertanyaan: 'Apakah koperasi memiliki toko offline?',
 		jawaban:
-			'Ya, koperasi memiliki toko yang beralamat di Jl. Jendral Sudirman, Kel. Awirarangan. Toko buka setiap hari Senin–Sabtu pukul 07.00–17.00 WIB.'
+			'Ya, koperasi memiliki toko yang beralamat di Jl. Raden Saleh Karang Tengah Kota Tangerang - Banten. Toko buka setiap hari Senin–Sabtu pukul 07.00–17.00 WIB.'
 	}
 ];
 
 export const syaratKeanggotaan = [
-	'Warga Negara Indonesia yang berdomisili di Kelurahan Awirarangan',
+	'Warga Negara Indonesia yang berdomisili di Kelurahan Karang Tengah',
 	'Berusia minimal 17 tahun atau sudah menikah',
 	'Memiliki Kartu Tanda Penduduk (KTP) yang masih berlaku',
 	'Mengisi formulir pendaftaran anggota',

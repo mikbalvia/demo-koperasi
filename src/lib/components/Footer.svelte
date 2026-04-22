@@ -28,11 +28,11 @@
 							</linearGradient>
 						</defs>
 					</svg>
-					<span class="footer__logo-text">KKMP Awirarangan</span>
+					<span class="footer__logo-text">KKMP Karang Tengah</span>
 				</div>
 				<p class="footer__desc">
 					Membangun ekonomi kerakyatan berbasis gotong royong untuk kesejahteraan anggota dan
-					masyarakat Kelurahan Awirarangan.
+					masyarakat Kelurahan Karang Tengah.
 				</p>
 				<div class="footer__badge">
 					<span class="badge badge--gold"><Sparkles size={12} strokeWidth={2} /> Program Pemerintah</span>

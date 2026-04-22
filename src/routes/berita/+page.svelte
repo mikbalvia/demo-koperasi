@@ -49,7 +49,7 @@
 </script>
 
 <svelte:head>
-	<title>Berita & Informasi — KKMP Awirarangan</title>
+	<title>Berita & Informasi — KKMP Karang Tengah</title>
 </svelte:head>
 
 <section class="page-header">
@@ -57,7 +57,7 @@
 	<div class="container page-header__content">
 		<span class="badge badge--gold"><Newspaper size={12} strokeWidth={2} /> Warta Koperasi</span>
 		<h1 class="page-header__title">Berita & Informasi</h1>
-		<p class="page-header__subtitle">Ikuti kegiatan dan pengumuman terbaru dari Koperasi Merah Putih Awirarangan.</p>
+		<p class="page-header__subtitle">Ikuti kegiatan dan pengumuman terbaru dari Koperasi Merah Putih Karang Tengah.</p>
 	</div>
 </section>
 

@@ -44,7 +44,7 @@
 			</div>
 			<div class="navbar__brand-text">
 				<span class="navbar__title">KKMP</span>
-				<span class="navbar__subtitle">Awirarangan</span>
+				<span class="navbar__subtitle">Karang Tengah</span>
 			</div>
 		</a>
 

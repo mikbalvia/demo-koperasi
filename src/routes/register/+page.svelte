@@ -162,8 +162,8 @@
 </script>
 
 <svelte:head>
-	<title>Daftar Anggota - KKMP Awirarangan</title>
-	<meta name="description" content="Pendaftaran anggota baru Koperasi Kelurahan Merah Putih Awirarangan." />
+	<title>Daftar Anggota - KKMP Karang Tengah</title>
+	<meta name="description" content="Pendaftaran anggota baru Koperasi Kelurahan Merah Putih Karang Tengah." />
 </svelte:head>
 
 <section class="register-page">

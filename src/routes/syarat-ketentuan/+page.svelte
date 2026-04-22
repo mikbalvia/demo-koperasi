@@ -4,8 +4,8 @@
 </script>
 
 <svelte:head>
-	<title>Syarat & Ketentuan — KKMP Awirarangan</title>
-	<meta name="description" content="Syarat dan ketentuan keanggotaan Koperasi Kelurahan Merah Putih Awirarangan." />
+	<title>Syarat & Ketentuan — KKMP Karang Tengah</title>
+	<meta name="description" content="Syarat dan ketentuan keanggotaan Koperasi Kelurahan Merah Putih Karang Tengah." />
 </svelte:head>
 
 <section class="page-header">
@@ -14,7 +14,7 @@
 		<span class="badge badge--gold"><ScrollText size={12} strokeWidth={2} /> Dokumen Resmi</span>
 		<h1 class="page-header__title">Syarat & Ketentuan</h1>
 		<p class="page-header__subtitle">
-			Hak, kewajiban, dan ketentuan keanggotaan Koperasi Kelurahan Merah Putih Awirarangan.
+			Hak, kewajiban, dan ketentuan keanggotaan Koperasi Kelurahan Merah Putih Karang Tengah.
 		</p>
 	</div>
 </section>
@@ -27,8 +27,8 @@
 				<div class="sk-article__body">
 					<p>Dalam ketentuan ini yang dimaksud dengan:</p>
 					<ol>
-						<li><strong>Koperasi</strong> adalah Koperasi Kelurahan Merah Putih Awirarangan yang selanjutnya disebut KKMP Awirarangan.</li>
-						<li><strong>Anggota</strong> adalah setiap Warga Negara Indonesia yang berdomisili di Kelurahan Awirarangan dan telah memenuhi syarat keanggotaan.</li>
+						<li><strong>Koperasi</strong> adalah Koperasi Kelurahan Merah Putih Karang Tengah yang selanjutnya disebut KKMP Karang Tengah.</li>
+						<li><strong>Anggota</strong> adalah setiap Warga Negara Indonesia yang berdomisili di Kelurahan Karang Tengah dan telah memenuhi syarat keanggotaan.</li>
 						<li><strong>Pengurus</strong> adalah anggota koperasi yang dipilih dalam Rapat Anggota Tahunan untuk mengelola kegiatan koperasi.</li>
 						<li><strong>Pengawas</strong> adalah anggota koperasi yang dipilih dalam Rapat Anggota Tahunan untuk mengawasi kegiatan koperasi.</li>
 						<li><strong>SHU</strong> (Sisa Hasil Usaha) adalah selisih antara pendapatan dan biaya operasional koperasi dalam satu tahun buku.</li>
@@ -40,11 +40,11 @@
 				<h2 class="sk-article__title">Pasal 2 — Keanggotaan</h2>
 				<div class="sk-article__body">
 					<ol>
-						<li>Keanggotaan bersifat sukarela dan terbuka bagi seluruh warga Kelurahan Awirarangan yang memenuhi syarat.</li>
+						<li>Keanggotaan bersifat sukarela dan terbuka bagi seluruh warga Kelurahan Karang Tengah yang memenuhi syarat.</li>
 						<li>Calon anggota wajib berusia minimal 17 tahun atau sudah menikah.</li>
 						<li>Calon anggota wajib menyerahkan dokumen yang diperlukan dan membayar simpanan pokok serta simpanan wajib pertama.</li>
 						<li>Keanggotaan berlaku sejak tanggal disetujui oleh pengurus koperasi.</li>
-						<li>Keanggotaan berakhir karena: meninggal dunia, mengundurkan diri secara tertulis, diberhentikan oleh RAT, atau pindah domisili dari Kelurahan Awirarangan.</li>
+						<li>Keanggotaan berakhir karena: meninggal dunia, mengundurkan diri secara tertulis, diberhentikan oleh RAT, atau pindah domisili dari Kelurahan Karang Tengah.</li>
 					</ol>
 				</div>
 			</article>
@@ -114,7 +114,7 @@
 			</article>
 
 			<div class="sk-footer">
-				<p>Dokumen ini berlaku sejak ditetapkan dalam Rapat Anggota Tahunan Koperasi Kelurahan Merah Putih Awirarangan.</p>
+				<p>Dokumen ini berlaku sejak ditetapkan dalam Rapat Anggota Tahunan Koperasi Kelurahan Merah Putih Karang Tengah.</p>
 				<p class="sk-footer__date">Terakhir diperbarui: Januari 2026</p>
 			</div>
 		</div>
