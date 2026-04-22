@@ -204,7 +204,7 @@
 						<a href="/login" class="login-forgot" id="forgot-password">Lupa password?</a>
 					</div>
 
-					<button type="submit" class="btn btn--primary btn--lg login-submit" id="login-submit">
+					<button type="submit" class="btn btn--primary btn--lg login-submit" id="login-submit" disabled={loading}>
 						{#if loading}Memproses...{:else}Masuk Sekarang{/if}
 						<ArrowRight size={18} strokeWidth={2} />
 					</button>
@@ -231,13 +231,15 @@
 	/* Page Layout */
 	.login-page {
 		display: flex;
-		min-height: 100vh;
+		height: 100vh;
+		overflow: hidden;
 	}
 
 	/* Brand Panel */
 	.login-brand {
 		position: relative;
 		width: 45%;
+		height: 100vh;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -348,8 +350,10 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		height: 100vh;
 		padding: var(--space-8);
 		background: var(--color-bg);
+		overflow-y: auto;
 	}
 
 	.login-form-panel__inner {
@@ -626,6 +630,12 @@
 	}
 
 	@media (max-width: 960px) {
+		.login-page {
+			height: auto;
+			min-height: 100vh;
+			overflow: visible;
+		}
+
 		.login-brand {
 			display: none;
 		}
@@ -635,6 +645,9 @@
 		}
 
 		.login-form-panel {
+			height: auto;
+			min-height: 100vh;
+			overflow: visible;
 			padding: var(--space-6);
 			padding-top: 96px;
 			align-items: flex-start;
@@ -652,6 +665,9 @@
 	@media (max-width: 960px) and (orientation: landscape) and (min-width: 760px) {
 		.login-page {
 			flex-direction: row;
+			height: auto;
+			min-height: 100vh;
+			overflow: visible;
 		}
 
 		.login-brand {
@@ -665,6 +681,9 @@
 		}
 
 		.login-form-panel {
+			height: auto;
+			min-height: 100vh;
+			overflow: visible;
 			padding: var(--space-6) var(--space-5);
 			padding-top: var(--space-8);
 			align-items: center;

@@ -2,23 +2,49 @@
 	import { berita } from '$lib/data/content';
 	import NewsCard from '$lib/components/NewsCard.svelte';
 	import SectionHeading from '$lib/components/SectionHeading.svelte';
-	import { onMount } from 'svelte';
+	import { onMount, tick } from 'svelte';
 	import { Newspaper } from '@lucide/svelte';
 
 	let activeFilter = $state('Semua');
 	const categories = ['Semua', ...new Set(berita.map((b) => b.kategori))];
 
-	let filtered = $derived(
+	const filteredNews = $derived(
 		activeFilter === 'Semua' ? berita : berita.filter((b) => b.kategori === activeFilter)
 	);
 
+	let observer: IntersectionObserver | null = null;
+
+	const observeNewsItems = () => {
+		if (!observer || typeof document === 'undefined') return;
+		const activeObserver = observer;
+
+		document.querySelectorAll<HTMLElement>('.news-grid .animate-on-scroll').forEach((el) => {
+			if (!el.classList.contains('in-view')) {
+				activeObserver.observe(el);
+			}
+		});
+	};
+
 	onMount(() => {
-		const observer = new IntersectionObserver(
+		observer = new IntersectionObserver(
 			(entries) => { entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add('in-view'); }); },
 			{ threshold: 0.1 }
 		);
-		document.querySelectorAll('.animate-on-scroll').forEach((el) => observer.observe(el));
-		return () => observer.disconnect();
+		observeNewsItems();
+		return () => observer?.disconnect();
+	});
+
+	$effect(() => {
+		filteredNews;
+
+		void tick().then(() => {
+			document.querySelectorAll<HTMLElement>('.news-grid .animate-on-scroll').forEach((el) => {
+				// Filtered cards should never stay invisible after rerender.
+				el.classList.add('in-view');
+			});
+
+			observeNewsItems();
+		});
 	});
 </script>
 
@@ -41,6 +67,7 @@
 		<div class="filter-bar">
 			{#each categories as cat}
 				<button
+					type="button"
 					class="filter-btn"
 					class:active={activeFilter === cat}
 					onclick={() => (activeFilter = cat)}
@@ -51,9 +78,9 @@
 		</div>
 
 		<!-- Grid -->
-		{#if filtered.length > 0}
+		{#if filteredNews.length > 0}
 			<div class="news-grid">
-				{#each filtered as item (item.id)}
+				{#each filteredNews as item (item.id)}
 					<div class="animate-on-scroll">
 						<NewsCard berita={item} />
 					</div>

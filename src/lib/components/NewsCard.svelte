@@ -9,11 +9,13 @@
 
 	let { berita }: Props = $props();
 
-	const dateFormatted = new Date(berita.tanggal).toLocaleDateString('id-ID', {
-		day: 'numeric',
-		month: 'long',
-		year: 'numeric'
-	});
+	const dateFormatted = $derived(
+		new Date(berita.tanggal).toLocaleDateString('id-ID', {
+			day: 'numeric',
+			month: 'long',
+			year: 'numeric'
+		})
+	);
 
 	const categoryColors: Record<string, string> = {
 		Kegiatan: 'badge--red',
@@ -124,6 +126,7 @@
 		color: var(--color-text);
 		line-height: 1.3;
 		display: -webkit-box;
+		line-clamp: 2;
 		-webkit-line-clamp: 2;
 		-webkit-box-orient: vertical;
 		overflow: hidden;
@@ -134,6 +137,7 @@
 		color: var(--color-text-secondary);
 		line-height: 1.6;
 		display: -webkit-box;
+		line-clamp: 3;
 		-webkit-line-clamp: 3;
 		-webkit-box-orient: vertical;
 		overflow: hidden;

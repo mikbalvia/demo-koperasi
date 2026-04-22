@@ -1,0 +1,123 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e5]:
+      - link "KKMP Awirarangan" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img [ref=e8]:
+          - generic [ref=e10]: K
+        - generic [ref=e11]:
+          - generic [ref=e12]: KKMP
+          - generic [ref=e13]: Awirarangan
+      - generic [ref=e15]:
+        - link "Profil" [ref=e16] [cursor=pointer]:
+          - /url: /#profil
+        - link "Layanan" [ref=e17] [cursor=pointer]:
+          - /url: /#layanan
+        - link "Organisasi" [ref=e18] [cursor=pointer]:
+          - /url: /#organisasi
+        - link "Berita" [ref=e19] [cursor=pointer]:
+          - /url: /berita
+        - link "Info Pendaftaran" [ref=e20] [cursor=pointer]:
+          - /url: /info-pendaftaran
+        - link "Simulasi Cicilan" [ref=e21] [cursor=pointer]:
+          - /url: /simulasi-cicilan
+        - link "Cek Anggota" [ref=e22] [cursor=pointer]:
+          - /url: /cek-anggota
+        - link "Daftar Anggota" [ref=e23] [cursor=pointer]:
+          - /url: /register
+  - main [ref=e24]:
+    - generic [ref=e27]:
+      - generic [ref=e28]:
+        - img [ref=e29]
+        - text: Warta Koperasi
+      - heading "Berita & Informasi" [level=1] [ref=e32]
+      - paragraph [ref=e33]: Ikuti kegiatan dan pengumuman terbaru dari Koperasi Merah Putih Awirarangan.
+    - generic [ref=e35]:
+      - generic [ref=e36]:
+        - button "Semua" [ref=e37] [cursor=pointer]
+        - button "Kegiatan" [ref=e38] [cursor=pointer]
+        - button "Program" [active] [ref=e39] [cursor=pointer]
+        - button "Pelatihan" [ref=e40] [cursor=pointer]
+        - button "Kerjasama" [ref=e41] [cursor=pointer]
+        - button "Usaha" [ref=e42] [cursor=pointer]
+      - article [ref=e208]:
+        - img "Program Sembako Murah untuk Warga Kelurahan" [ref=e210]
+        - generic [ref=e211]:
+          - generic [ref=e212]:
+            - generic [ref=e213]: Program
+            - generic [ref=e214]:
+              - img [ref=e215]
+              - time [ref=e216]: 20 Februari 2026
+          - heading "Program Sembako Murah untuk Warga Kelurahan" [level=3] [ref=e217]
+          - paragraph [ref=e218]: Koperasi berhasil menjalankan program sembako murah yang berdampak langsung pada 500 keluarga di Kelurahan Awirarangan.
+          - link "Baca Selengkapnya" [ref=e219] [cursor=pointer]:
+            - /url: /berita/program-sembako-murah
+            - text: Baca Selengkapnya
+            - img [ref=e220]
+  - contentinfo [ref=e140]:
+    - generic [ref=e141]:
+      - generic [ref=e142]:
+        - generic [ref=e143]:
+          - generic [ref=e144]:
+            - img [ref=e145]:
+              - generic [ref=e147]: K
+            - generic [ref=e148]: KKMP Awirarangan
+          - paragraph [ref=e149]: Membangun ekonomi kerakyatan berbasis gotong royong untuk kesejahteraan anggota dan masyarakat Kelurahan Awirarangan.
+          - generic [ref=e151]:
+            - img [ref=e152]
+            - text: Program Pemerintah
+        - generic [ref=e155]:
+          - heading "Tautan Cepat" [level=4] [ref=e156]
+          - list [ref=e157]:
+            - listitem [ref=e158]:
+              - link "Profil" [ref=e159] [cursor=pointer]:
+                - /url: /#profil
+            - listitem [ref=e160]:
+              - link "Layanan" [ref=e161] [cursor=pointer]:
+                - /url: /#layanan
+            - listitem [ref=e162]:
+              - link "Organisasi" [ref=e163] [cursor=pointer]:
+                - /url: /#organisasi
+            - listitem [ref=e164]:
+              - link "Berita" [ref=e165] [cursor=pointer]:
+                - /url: /berita
+            - listitem [ref=e166]:
+              - link "Info Pendaftaran" [ref=e167] [cursor=pointer]:
+                - /url: /info-pendaftaran
+        - generic [ref=e168]:
+          - heading "Layanan" [level=4] [ref=e169]
+          - list [ref=e170]:
+            - listitem [ref=e171]:
+              - link "Simulasi Cicilan" [ref=e172] [cursor=pointer]:
+                - /url: /simulasi-cicilan
+            - listitem [ref=e173]:
+              - link "Cek Status Anggota" [ref=e174] [cursor=pointer]:
+                - /url: /cek-anggota
+            - listitem [ref=e175]:
+              - link "Syarat & Ketentuan" [ref=e176] [cursor=pointer]:
+                - /url: /syarat-ketentuan
+            - listitem [ref=e177]:
+              - link "Simkopdes Pusat" [ref=e178] [cursor=pointer]:
+                - /url: https://simkopdes.go.id
+                - text: Simkopdes Pusat
+                - img [ref=e179]
+        - generic [ref=e183]:
+          - heading "Kontak" [level=4] [ref=e184]
+          - list [ref=e185]:
+            - listitem [ref=e186]:
+              - img [ref=e187]
+              - generic [ref=e190]: Jl. Jendral Sudirman, RT 006 RW 003, Kel. Awirarangan, Kec. Kuningan, Kab. Kuningan, Jawa Barat, 45511
+            - listitem [ref=e191]:
+              - img [ref=e192]
+              - link "koprasimerput.awirarangan@gmail.com" [ref=e195] [cursor=pointer]:
+                - /url: mailto:koprasimerput.awirarangan@gmail.com
+            - listitem [ref=e196]:
+              - img [ref=e197]
+              - link "merahputih.kop.id" [ref=e200] [cursor=pointer]:
+                - /url: https://merahputih.kop.id/
+      - generic [ref=e202]:
+        - paragraph [ref=e203]: © 2026 Koperasi Kelurahan Merah Putih Awirarangan. Semua Hak Cipta Dilindungi.
+        - paragraph [ref=e204]:
+          - text: Bagian dari program
+          - link "Kementerian Koperasi Republik Indonesia" [ref=e205] [cursor=pointer]:
+            - /url: https://simkopdes.go.id

@@ -7,7 +7,7 @@
 
 	let { children } = $props();
 
-	let isAuthPage = $derived($page.url.pathname === '/login');
+	let isAuthPage = $derived(['/login', '/register'].includes($page.url.pathname));
 
 	// Scroll-to-top on route change
 	$effect(() => {
