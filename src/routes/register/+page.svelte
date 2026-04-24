@@ -170,10 +170,7 @@
 	<div class="register-brand">
 		<div class="register-brand__bg"></div>
 		<div class="register-brand__pattern"></div>
-		<div class="register-brand__orbs">
-			<div class="register-brand__orb register-brand__orb--1"></div>
-			<div class="register-brand__orb register-brand__orb--2"></div>
-		</div>
+		<div class="register-brand__frame"></div>
 		<div class="register-brand__content">
 			<div class="register-brand__logo">
 				<svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -383,14 +380,14 @@
 <style>
 	.register-page {
 		display: flex;
-		height: 100vh;
+		min-height: 100dvh;
 		overflow: hidden;
 	}
 
 	.register-brand {
 		position: relative;
 		width: 42%;
-		height: 100vh;
+		min-height: 100dvh;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -401,44 +398,27 @@
 	.register-brand__bg {
 		position: absolute;
 		inset: 0;
-		background: linear-gradient(150deg, var(--red-800), var(--red-900), var(--warm-900));
+		background:
+			linear-gradient(90deg, rgba(18, 15, 13, 0.94), rgba(74, 13, 13, 0.86)),
+			linear-gradient(180deg, rgba(216, 168, 78, 0.12), rgba(18, 15, 13, 0)),
+			var(--warm-900);
 	}
 
 	.register-brand__pattern {
 		position: absolute;
 		inset: 0;
-		opacity: 0.05;
-		background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M40 0L44 4L40 8L36 4zM0 40L4 44L0 48L-4 44zM80 40L84 44L80 48L76 44zM40 80L44 84L40 88L36 84z'/%3E%3C/g%3E%3C/svg%3E");
+		opacity: 0.14;
+		background-image:
+			linear-gradient(rgba(255, 248, 234, 0.1) 1px, rgba(255, 248, 234, 0) 1px),
+			linear-gradient(90deg, rgba(255, 248, 234, 0.1) 1px, rgba(255, 248, 234, 0) 1px);
+		background-size: 88px 88px;
 	}
 
-	.register-brand__orbs {
+	.register-brand__frame {
 		position: absolute;
-		inset: 0;
-		overflow: hidden;
-	}
-
-	.register-brand__orb {
-		position: absolute;
-		border-radius: 50%;
-		filter: blur(80px);
-		animation: float 8s ease-in-out infinite;
-	}
-
-	.register-brand__orb--1 {
-		width: 300px;
-		height: 300px;
-		background: rgba(217, 119, 6, 0.15);
-		top: -80px;
-		right: -60px;
-	}
-
-	.register-brand__orb--2 {
-		width: 220px;
-		height: 220px;
-		background: rgba(4, 120, 87, 0.1);
-		bottom: -40px;
-		left: -40px;
-		animation-delay: 3s;
+		inset: var(--space-8);
+		border: 1px solid rgba(255, 248, 234, 0.16);
+		pointer-events: none;
 	}
 
 	.register-brand__content {
@@ -475,7 +455,8 @@
 		display: flex;
 		align-items: flex-start;
 		justify-content: center;
-		height: 100vh;
+		min-height: 100dvh;
+		max-height: 100dvh;
 		padding: var(--space-8);
 		background: var(--color-bg);
 		overflow-y: auto;
@@ -782,7 +763,7 @@
 	@media (max-width: 900px) {
 		.register-page {
 			height: auto;
-			min-height: 100vh;
+			min-height: 100dvh;
 			overflow: visible;
 		}
 
@@ -796,7 +777,8 @@
 
 		.register-form-panel {
 			height: auto;
-			min-height: 100vh;
+			min-height: 100dvh;
+			max-height: none;
 			overflow: visible;
 			padding: var(--space-6);
 			padding-top: 96px;

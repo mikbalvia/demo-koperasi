@@ -22,27 +22,32 @@
 <style>
 	.section-heading {
 		margin-bottom: var(--space-12);
+		max-width: 760px;
 	}
 
 	.section-heading.center {
 		text-align: center;
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 	.section-heading__title {
 		font-size: var(--text-4xl);
 		color: var(--color-text);
 		margin-bottom: var(--space-3);
+		line-height: 1.04;
 	}
 
 	.light .section-heading__title {
-		color: white;
+		color: var(--paper-warm);
 	}
 
 	.section-heading__subtitle {
 		font-size: var(--text-lg);
 		color: var(--color-text-secondary);
-		max-width: 600px;
+		max-width: 680px;
 		line-height: 1.6;
+		text-wrap: pretty;
 	}
 
 	.center .section-heading__subtitle {
@@ -50,7 +55,7 @@
 	}
 
 	.light .section-heading__subtitle {
-		color: rgba(255, 255, 255, 0.7);
+		color: rgba(255, 248, 234, 0.72);
 	}
 
 	.ornament {

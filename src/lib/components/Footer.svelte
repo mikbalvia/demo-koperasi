@@ -109,7 +109,9 @@
 <style>
 	.footer {
 		position: relative;
-		background: var(--warm-900);
+		background:
+			linear-gradient(120deg, rgba(74, 13, 13, 0.24), rgba(74, 13, 13, 0) 48%),
+			var(--warm-900);
 		color: var(--warm-300);
 		overflow: hidden;
 	}
@@ -163,7 +165,7 @@
 		font-weight: 700;
 		color: white;
 		text-transform: uppercase;
-		letter-spacing: 0.08em;
+		letter-spacing: 0;
 		margin-bottom: var(--space-5);
 	}
 

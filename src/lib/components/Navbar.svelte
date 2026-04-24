@@ -2,6 +2,7 @@
 	import { navLinks, profil } from '$lib/data/content';
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
+	import { Menu, X } from '@lucide/svelte';
 
 	let scrolled = $state(false);
 	let mobileOpen = $state(false);
@@ -51,7 +52,9 @@
 		<div class="navbar__links" class:open={mobileOpen}>
 			<div class="navbar__links-overlay" onclick={closeMobile} role="presentation"></div>
 			<div class="navbar__links-inner">
-				<button class="navbar__close" onclick={closeMobile} aria-label="Close menu">✕</button>
+				<button class="navbar__close" onclick={closeMobile} aria-label="Tutup menu">
+					<X size={22} strokeWidth={2} />
+				</button>
 				{#each navLinks as link}
 					<a
 						href={link.href}
@@ -75,9 +78,7 @@
 			aria-label="Toggle menu"
 			aria-expanded={mobileOpen}
 		>
-			<span class="navbar__hamburger-line"></span>
-			<span class="navbar__hamburger-line"></span>
-			<span class="navbar__hamburger-line"></span>
+			<Menu size={24} strokeWidth={2} />
 		</button>
 	</div>
 </nav>
@@ -92,7 +93,9 @@
 		padding: var(--space-4) 0;
 		transition:
 			padding var(--transition-base),
-			box-shadow var(--transition-base);
+			box-shadow var(--transition-base),
+			border-color var(--transition-base);
+		border-bottom: 1px solid rgba(255, 248, 234, 0);
 	}
 
 	.navbar::before {
@@ -106,11 +109,12 @@
 
 	.navbar.scrolled {
 		padding: var(--space-2) 0;
-		box-shadow: var(--shadow-md);
+		box-shadow: 0 16px 36px rgba(74, 13, 13, 0.08);
+		border-bottom-color: rgba(74, 13, 13, 0.08);
 	}
 
 	.navbar.scrolled::before {
-		background: rgba(255, 255, 255, 0.92);
+		background: rgba(247, 242, 232, 0.92);
 		backdrop-filter: blur(20px);
 		-webkit-backdrop-filter: blur(20px);
 	}
@@ -160,7 +164,7 @@
 		font-size: var(--text-xs);
 		color: var(--color-text-secondary);
 		font-weight: 500;
-		letter-spacing: 0.05em;
+		letter-spacing: 0;
 	}
 
 	:global(body:not(.scrolled-body)) .navbar:not(.scrolled) .navbar__subtitle {
@@ -193,7 +197,7 @@
 	.navbar__link:hover,
 	.navbar__link.active {
 		color: var(--color-primary);
-		background: var(--color-primary-light);
+		background: rgba(179, 32, 37, 0.1);
 	}
 
 	:global(body:not(.scrolled-body)) .navbar:not(.scrolled) .navbar__link:hover,
@@ -213,22 +217,15 @@
 	/* Hamburger */
 	.navbar__hamburger {
 		display: none;
-		flex-direction: column;
-		gap: 5px;
+		align-items: center;
+		justify-content: center;
 		padding: var(--space-2);
+		border-radius: var(--radius-md);
+		color: var(--color-text);
 	}
 
-	.navbar__hamburger-line {
-		display: block;
-		width: 22px;
-		height: 2px;
-		background: var(--color-text);
-		border-radius: 2px;
-		transition: var(--transition-fast);
-	}
-
-	:global(body:not(.scrolled-body)) .navbar:not(.scrolled) .navbar__hamburger-line {
-		background: white;
+	:global(body:not(.scrolled-body)) .navbar:not(.scrolled) .navbar__hamburger {
+		color: white;
 	}
 
 	.navbar__links-overlay {
@@ -259,7 +256,7 @@
 			display: block;
 			position: absolute;
 			inset: 0;
-			background: rgba(0, 0, 0, 0.5);
+			background: rgba(18, 15, 13, 0.72);
 		}
 
 		.navbar__links-inner {
@@ -269,7 +266,7 @@
 			bottom: 0;
 			width: 300px;
 			max-width: 85vw;
-			background: white;
+			background: var(--paper);
 			flex-direction: column;
 			align-items: stretch;
 			padding: var(--space-6);

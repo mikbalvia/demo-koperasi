@@ -8,12 +8,12 @@
 
 	let { person, category = 'pengurus' }: Props = $props();
 
-	const initials = person.nama
+	const initials = $derived(person.nama
 		.split(' ')
 		.slice(0, 2)
 		.map((w) => w.charAt(0))
 		.join('')
-		.toUpperCase();
+		.toUpperCase());
 </script>
 
 <div class="org-card glass" class:pengawas={category === 'pengawas'}>
@@ -47,9 +47,9 @@
 	}
 
 	.org-card:hover {
-		transform: translateY(-6px);
+		transform: translateY(-5px);
 		box-shadow: var(--shadow-xl);
-		border-color: var(--color-primary-light);
+		border-color: rgba(179, 32, 37, 0.2);
 	}
 
 	.pengawas:hover {
@@ -59,13 +59,13 @@
 	.org-card__avatar {
 		width: 80px;
 		height: 80px;
-		border-radius: 50%;
-		background: linear-gradient(135deg, var(--red-600), var(--red-800));
+		border-radius: var(--radius-lg);
+		background: var(--deep-red);
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		overflow: hidden;
-		box-shadow: 0 4px 14px rgba(185, 28, 28, 0.2);
+		box-shadow: 0 16px 30px rgba(74, 13, 13, 0.18);
 		transition: transform var(--transition-spring);
 	}
 
@@ -74,7 +74,7 @@
 	}
 
 	.pengawas .org-card__avatar {
-		background: linear-gradient(135deg, var(--green-600), var(--green-800));
+		background: var(--heritage-green);
 		box-shadow: 0 4px 14px rgba(4, 120, 87, 0.2);
 	}
 
@@ -103,7 +103,7 @@
 		color: var(--color-primary);
 		font-weight: 600;
 		text-transform: uppercase;
-		letter-spacing: 0.05em;
+		letter-spacing: 0;
 	}
 
 	.pengawas .org-card__role {

@@ -19,6 +19,7 @@
 </script>
 
 <div class="service-card bento-item bento-item--glow" style="--delay: {index * 100}ms">
+	<span class="service-card__index">0{index + 1}</span>
 	<div class="service-card__icon-wrap">
 		{#if IconComponent}
 			<IconComponent size={28} strokeWidth={1.5} />
@@ -35,6 +36,9 @@
 		padding: var(--space-8) var(--space-6);
 		position: relative;
 		overflow: hidden;
+		background:
+			linear-gradient(180deg, rgba(255, 250, 240, 0.96), rgba(238, 229, 214, 0.82)),
+			var(--color-surface);
 		transition:
 			transform var(--transition-bouncy),
 			box-shadow var(--transition-base),
@@ -42,18 +46,28 @@
 	}
 
 	.service-card:hover {
-		transform: translateY(-8px);
+		transform: translateY(-6px);
 		box-shadow: var(--shadow-2xl);
-		border-color: var(--color-accent-light);
+		border-color: rgba(216, 168, 78, 0.42);
+	}
+
+	.service-card__index {
+		position: absolute;
+		top: var(--space-5);
+		right: var(--space-5);
+		font-family: var(--font-display);
+		font-size: var(--text-4xl);
+		line-height: 1;
+		color: rgba(74, 13, 13, 0.08);
 	}
 
 	.service-card__accent {
 		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		height: 4px;
-		background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+		left: var(--space-6);
+		right: var(--space-6);
+		bottom: var(--space-6);
+		height: 2px;
+		background: var(--color-accent);
 		transform: scaleX(0);
 		transform-origin: left;
 		transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -67,13 +81,14 @@
 		width: 64px;
 		height: 64px;
 		border-radius: var(--radius-lg);
-		background: linear-gradient(135deg, var(--red-50), var(--gold-50));
+		background: var(--deep-red);
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		margin-bottom: var(--space-5);
-		color: var(--color-primary);
+		color: var(--gold-300);
 		transition: transform var(--transition-spring);
+		box-shadow: 0 16px 32px rgba(74, 13, 13, 0.18);
 	}
 
 	.service-card:hover .service-card__icon-wrap {
@@ -85,12 +100,14 @@
 		font-size: var(--text-xl);
 		margin-bottom: var(--space-3);
 		color: var(--color-text);
+		max-width: 16rem;
 	}
 
 	.service-card__desc {
 		font-size: var(--text-sm);
 		color: var(--color-text-secondary);
 		line-height: 1.7;
+		padding-bottom: var(--space-8);
 	}
 
 	@media (max-width: 768px) {
